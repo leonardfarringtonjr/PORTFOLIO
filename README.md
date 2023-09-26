@@ -36,6 +36,7 @@
         - Layouts
             - **navigation.blade.php** -> your authentication form
 - Routes
+    - **auth.php** -> all of your authentication routes
     - **web.php** -> where all of your routes go
 - Storage
 - Tests
