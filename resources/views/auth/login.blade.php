@@ -40,6 +40,11 @@
                             <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}" class="needs-validation"
                                     novalidate="">
+
+                                    @if (session('status'))
+                                    <p class="text-success">{{session('status')}}</p>
+                                    @endif
+
                                     @csrf
 
                                     {{-- USERNAME --}}
@@ -90,6 +95,11 @@
 
                             </div>
                         </div>
+
+                        <div class="simple-footer">
+                            Copyright &copy;
+                        </div>
+
                     </div>
                 </div>
             </div>

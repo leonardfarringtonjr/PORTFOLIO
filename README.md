@@ -61,12 +61,44 @@
 
 ## PROJECT NOTES
 
+0. UNDERSTANDING LARAVEL
+    - return view('folder.file')
+    - all views in Laravel follow the .blade.php format
+
+    * comments in laravel = {{-- --}}
+
+    . LARAVEL AUTHENTICATION
+        * ALL CONTAINED WITHIN THE AUTH FOLDER IN VIEWS
+
 1. SETUP
     - ?
     - CONNECT TO GITHUB
-2. ADMIN PANEL
-    - ?
-    - SET UP MAIL SERVER FOR FORGET PASSWORD
-    - FORGET PASSWORD LINK
+2. ADMIN PANEL (THIS ENTIRE SECTION IS ABOUT FINDING WHAT FILES STORE WHAT DATA AND CHANGING THEM SO THAT THE TEMPLATE MATCHES WHAT ALREADY EXISTS IN LARAVEL)
+    1. Mastering the Admin Dashboard Page
+        * Create an admin folder inside of views where all of your admin views will go
+        * ?
+    2. Mastering the Admin Login Page
+    3. Mastering the Forget Password Page -> Section 44
+        1. SET UP MAIL SERVER
+        2. TO CREATE THE FORGOT PASS PAGE, YOU CAN JUST COPY THE LOGIN PAGE CODE
+            * WHEN YOU SEND A REQUEST TO CHANGE YOUR PASS, YOU SHOULD GET A NOTIFICATION
+                * USE AN IF/ELSE FOR CONDITIONAL RENDERING
+        3. WHEN YOU USE THE RESET PASS LINK, IT SHOULD REDIRECT TO YOUR RESET-PASSWORD VIEW
+            * INSTEAD OF USING value={{'old.email'}}, you can pull the previous password from the request variable -> $request->email -> THIS PUTS THE OLD PASSWORD INTO THE INPUT FIELD WHEN YOU WANT TO RESET YOUR PASSWORD
+            * THE EXACT SAME WAY YOU CAN PULL THE TOKEN FROM THE REQUEST VARIABLE
+            * WHENEVER YOU CHANGE SOMETHING IN THE DB, YOU NEED A NOTIFICATION OF WHAT IS HAPPENING. WHAT IS SUCCESSFUL? OR NOT?
+            * the store() method is responsible for saving your data
+            * you can grab the status var from the PASSWORD_RESET method -> 'status', __($status)
+        4. You have to change all of these at the same time:
+            1. Login
+            2. Forget Pass
+            3. Reset Pass
+            4. Mail Server
+        5. The password input field is not hidden
+        6. You should also get an email saying your password was changed
+    4. Mastering the Profile Edit page
+
+        // the Route::get('/url', [Controller::class, 'method'])
+
 3.
-# portfolio_2023
+
