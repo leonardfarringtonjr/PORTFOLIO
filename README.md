@@ -38,6 +38,7 @@
 - Routes
     - **auth.php** -> all of your authentication routes
     - **web.php** -> where all of your routes go
+        * Every Controller must be connected to the **web.php** file
 - Storage
 - Tests
 - Vendor -> contains all of the dependencies for Composer
@@ -97,6 +98,13 @@
         5. The password input field is not hidden
         6. You should also get an email saying your password was changed
     4. Mastering the Profile Edit page
+
+        1.
+            * WHENEVER YOU CREATE A NEW VIEW IN LARAVEL YOU NEED TO RETURN IT AS A VIEW
+            * WHEN YOU MOVE A CONTROLLER, REMEMBER TO CHANGE THE NAMESPACE
+            * ctrl + space over a class will bring up possible auto-imports for it to work
+        2. Trim the fields you dont need
+        3. Make the fields dynamic
 
         // the Route::get('/url', [Controller::class, 'method'])
 
