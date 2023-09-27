@@ -20,13 +20,9 @@
 
                     {{-- NAME --}}
                     <div class="card">
-
-                        <form method="post" class="needs-validation" novalidate="">
-
                             <div class="card-header">
                                 <h4>Profile Information</h4>
                             </div>
-
                             <div class="card-body">
 
                                 <form action="{{ route('profile.update') }}" method="POST">
@@ -62,42 +58,48 @@
                                     </div>
                                 </form>
                             </div>
-                        </form>
                     </div>
 
                     {{-- PASSWORD --}}
                     <div class="card">
 
-                        <form method="post" class="needs-validation" novalidate="">
-
                             <div class="card-header">
-                                <h4>Profile Information</h4>
+                                <h4>Update Password</h4>
                             </div>
 
                             <div class="card-body">
 
-                                <form action="{{ route('profile.update') }}" method="POST">
+                                <form action="{{ route('password.update') }}" method="POST">
 
                                     @csrf
-                                    @method('patch')
+                                    @method('put')
 
                                     <div class="row">
 
-                                        {{-- NAME --}}
-                                        <div class="form-group col-md-6 col-12">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" name="name" value="{{old('name', $user->name)}}" required="">
-                                            @if ($errors->has('name'))
-                                                <code>{{$errors->first('name')}}</code>
+                                        {{-- CURRENT PASS --}}
+                                        <div class="form-group col-12">
+                                            <label>Current Password</label>
+                                            <input type="password" class="form-control" name="current_password" autocomplete="current-password">
+                                            @if ($errors->updatePassword->has('current_password'))
+                                                <code>{{$errors->updatePassword->first('current_password')}}</code>
                                             @endif
                                         </div>
 
-                                        {{-- EMAIL --}}
-                                        <div class="form-group col-md-6 col-12">
-                                            <label>Email</label>
-                                            <input type="text" class="form-control" name="email" value="{{old('email', $user->email)}}" required="">
-                                            @if ($errors->has('email'))
-                                                <code>{{$errors->first('email')}}</code>
+                                        {{-- NEW PASS --}}
+                                        <div class="form-group col-12">
+                                            <label>New Password</label>
+                                            <input type="password" class="form-control" name="password" autocomplete="new-password">
+                                            @if ($errors->updatePassword->has('password'))
+                                                <code>{{$errors->updatePassword->first('password')}}</code>
+                                            @endif
+                                        </div>
+
+                                        {{-- CONFIRM PASS --}}
+                                        <div class="form-group col-12">
+                                            <label>Confirm Password</label>
+                                            <input type="password" class="form-control" name="password_confirmation" autocomplete="password_confirmation">
+                                            @if ($errors->updatePassword->has('password_confirmation'))
+                                                <code>{{$errors->updatePassword->first('password_confirmation')}}</code>
                                             @endif
                                         </div>
 
@@ -109,55 +111,8 @@
                                     </div>
                                 </form>
                             </div>
-                        </form>
                     </div>
 
-                    {{-- DELETE --}}
-                    <div class="card">
-
-                        <form method="post" class="needs-validation" novalidate="">
-
-                            <div class="card-header">
-                                <h4>Profile Information</h4>
-                            </div>
-
-                            <div class="card-body">
-
-                                <form action="{{ route('profile.update') }}" method="POST">
-
-                                    @csrf
-                                    @method('patch')
-
-                                    <div class="row">
-
-                                        {{-- NAME --}}
-                                        <div class="form-group col-md-6 col-12">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" name="name" value="{{old('name', $user->name)}}" required="">
-                                            @if ($errors->has('name'))
-                                                <code>{{$errors->first('name')}}</code>
-                                            @endif
-                                        </div>
-
-                                        {{-- EMAIL --}}
-                                        <div class="form-group col-md-6 col-12">
-                                            <label>Email</label>
-                                            <input type="text" class="form-control" name="email" value="{{old('email', $user->email)}}" required="">
-                                            @if ($errors->has('email'))
-                                                <code>{{$errors->first('email')}}</code>
-                                            @endif
-                                        </div>
-
-                                        {{-- SUBMIT BTN --}}
-                                        <div class="card-footer text-right">
-                                            <button class="btn btn-primary">Save Changes</button>
-                                        </div>
-
-                                    </div>
-                                </form>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>

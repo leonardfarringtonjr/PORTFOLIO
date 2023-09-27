@@ -120,6 +120,8 @@
                 // toastr()->success('Profile')
 
             * After creating this card to update the email, we need a card for updating the password
+            * Update Profile card
+            * Update Password card
 
         // the Route::get('/url', [Controller::class, 'method'])
 
