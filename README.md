@@ -105,6 +105,21 @@
             * ctrl + space over a class will bring up possible auto-imports for it to work
         2. Trim the fields you dont need
         3. Make the fields dynamic
+            * All data connected to the 'user profile' page is in the 'profile' folder
+            * Inside of a <form> should always be a @csrf token
+            * How to put default values into input fields -> you can pull the old user from the $user var within the $request var
+            * you need an error message just in-case something goes wrong whenever the user inputs data
+            * You can add notifications from Toastr.js ->
+            
+                // https://github.com/yoeunes/toastr
+
+                // composer require yoeunes/toastr
+
+            * In the PROFILECONTROLLER, YOU CAN ADD A MESSAGE CUSTOMIZED BY TOASTR TO THE PROFILEUPDATEREQUEST METHOD
+
+                // toastr()->success('Profile')
+
+            * After creating this card to update the email, we need a card for updating the password
 
         // the Route::get('/url', [Controller::class, 'method'])
 
