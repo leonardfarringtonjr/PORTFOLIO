@@ -31,10 +31,13 @@
     - **robots.txt**
 - Resources
     - Views
+        - Admin -> contains all admin views
         - Auth
             - **login.blade.php** -> the default login template
+        - Frontend -> contains all the frontend views
         - Layouts
             - **navigation.blade.php** -> your authentication form
+        - **welcome.blade.php** -> the default Laravel homepage
 - Routes
     - **auth.php** -> all of your authentication routes
     - **web.php** -> where all of your routes go
@@ -132,5 +135,9 @@
 
 C. FRONT-END
     1. MASTER - FRONTEND HOME PAGE
+        * CREATE A FRONTEND FOLDER UNDER VIEWS, JUST LIKE THE ADMIN FOLDER HERE
+        * CHANGE THE HOME ROUTE TO THE FRONTEND HOME PAGE
+            - the Welcome view is the default Laravel page you see
+            - to see the JS and CSS, you need to make them dynamic instead of static by using the asset() function
 D.
 

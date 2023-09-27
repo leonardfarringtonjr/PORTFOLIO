@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
