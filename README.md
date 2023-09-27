@@ -130,5 +130,7 @@
 
         // the Route::get('/url', [Controller::class, 'method'])
 
-3.
+C. FRONT-END
+    1. MASTER - FRONTEND HOME PAGE
+D.
 
