@@ -122,6 +122,11 @@
             * After creating this card to update the email, we need a card for updating the password
             * Update Profile card
             * Update Password card
+            * when you submit a form w/ no data, you should always get an error
+            * add update notification when you change the password
+            * how to show the current admin -> get the name from the $user var, just like you do to get the default user:
+
+                // {{old('name', $user->name)}}
 
         // the Route::get('/url', [Controller::class, 'method'])
 
