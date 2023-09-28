@@ -143,5 +143,16 @@ C. FRONT-END
         * Make the layout for the frontend template
             1. Create a new folder in frontend called 'layout'
             2. Create the layout.blade.php file inside
+                * What sections do we turn into layouts?
+                    1. Header
+                    2. Service
+                    3. About
+                    4. Portfolio
+                    5. Skills
+                    6. Experience
+                    7. Testimonials
+                    8. Blog
+                    9. Contact
+
 D.
 
