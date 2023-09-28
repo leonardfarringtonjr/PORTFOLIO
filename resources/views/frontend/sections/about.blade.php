@@ -22,11 +22,11 @@
                             similique, laboriosam, delectus reiciendis minima minus dolorem sit fuga rerum atque
                             vel quaerat ipsum perspiciatis neque maxime recusandae fugit.</p>
                     </div>
-                    {{-- <a href="#" class="button-primary-trans mouse-dir wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="#" class="button-primary-trans mouse-dir wow fadeInUp" data-wow-delay="0.5s">
                         <span class="icon"><i class="fal fa-download"></i></span>
                         <span class="text">Download Resume</span>
                         <span class="dir-part"></span>
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </div>
