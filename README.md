@@ -140,5 +140,8 @@ C. FRONT-END
             - the Welcome view is the default Laravel page you see
             - to see the JS and CSS, you need to make them dynamic instead of static by using the asset() function
         * WHENEVER YOU INSERT PHP INTO HTML IN LARAVEL IT MUST BE INSIDE {{}}
+        * Make the layout for the frontend template
+            1. Create a new folder in frontend called 'layout'
+            2. Create the layout.blade.php file inside
 D.
 
