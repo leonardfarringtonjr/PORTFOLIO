@@ -154,5 +154,16 @@ C. FRONT-END
                     8. Blog
                     9. Contact
 
+                * More sections to make into layouts
+                    1. Navbar
+                    2. Footer
+                    3. Main Content
+
+                * @extends('frontend.layouts.layout') -> takes the code from the layout.blade.php file and applies it to the page the @extends tag is in
+                * @section('content') <code> @endsection -> defines a section of code named 'content'
+                * @yield('content') -> generates any code placed between the section and endsection tags
+
+            3. Its a good idea to put each section as a layout in a 'sections' folder
+
 D.
 
