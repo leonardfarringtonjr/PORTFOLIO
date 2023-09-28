@@ -139,5 +139,6 @@ C. FRONT-END
         * CHANGE THE HOME ROUTE TO THE FRONTEND HOME PAGE
             - the Welcome view is the default Laravel page you see
             - to see the JS and CSS, you need to make them dynamic instead of static by using the asset() function
+        * WHENEVER YOU INSERT PHP INTO HTML IN LARAVEL IT MUST BE INSIDE {{}}
 D.
 
