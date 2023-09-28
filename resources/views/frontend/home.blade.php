@@ -254,6 +254,7 @@
     </section>
     <!-- Portfolio-Area-End -->
 
+    @include('frontend.sections.testimonial')
     @include('frontend.sections.skills')
     @include('frontend.sections.experience')
     @include('frontend.sections.blog')
