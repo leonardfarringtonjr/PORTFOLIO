@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- About-Area-Start -->
+    <!-- Hero -->
     @include('frontend.sections.hero')
 
     <!-- About-Area-Start -->
