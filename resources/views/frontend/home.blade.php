@@ -5,7 +5,7 @@
     <!-- Hero -->
     @include('frontend.sections.hero')
 
-    <!-- About-Area-Start -->
+    <!-- Service -->
     @include('frontend.sections.service')
     @include('frontend.sections.about')
     @include('frontend.sections.portfolio')
