@@ -10,8 +10,14 @@
     @include('frontend.sections.about')
     @include('frontend.sections.portfolio')
     @include('frontend.sections.testimonial')
+
+    <!-- Skills -->
     @include('frontend.sections.skills')
+
+    <!-- Experience -->
     @include('frontend.sections.experience')
+
+    <!-- Blog -->
     @include('frontend.sections.blog')
 
     <!-- Contact -->
