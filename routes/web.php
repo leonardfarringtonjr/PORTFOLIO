@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 // BLOG PAGE
 Route::get('/blog', function () {
-    return view('frontend.pages.blog-main-page.blog');
+    return view('frontend.pages.blog-pages.blog');
 });
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
