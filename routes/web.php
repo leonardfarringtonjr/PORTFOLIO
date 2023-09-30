@@ -19,9 +19,13 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
-// BLOG PAGE
+// BLOG PAGE ROUTES
 Route::get('/blog', function () {
     return view('frontend.pages.blog-pages.blog');
+});
+
+Route::get('/blog-details', function () {
+    return view('frontend.pages.blog-pages.blog-details');
 });
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
