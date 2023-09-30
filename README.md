@@ -164,6 +164,9 @@ C. FRONT-END
                 * @yield('content') -> generates any code placed between the section and endsection tags
 
             3. Its a good idea to put each section as a layout in a 'sections' folder
-
+    2. MASTER - FRONTEND BLOG PAGE
+        1. CREATE A BLOG FILE -> BLOG.BLADE.PHP
+        2. CREATE A ROUTE FOR THAT PAGE
+            * AFTER YOU CREATE A PAGE, CREATE A ROUTE, THEN TEST IF THE ROUTE TAKES YOU TO THAT PAGE
 D.
 

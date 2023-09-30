@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
+// BLOG PAGE
+Route::get('/blog', function () {
+    return view('frontend.pages.blog');
+});
+
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
