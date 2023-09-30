@@ -28,6 +28,11 @@ Route::get('/blog-details', function () {
     return view('frontend.pages.blog-pages.blog-details');
 });
 
+// PORTFOLIO ROUTES
+Route::get('/portfolio-details', function () {
+    return view('frontend.pages.portfolio-pages.portfolio-details');
+});
+
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
