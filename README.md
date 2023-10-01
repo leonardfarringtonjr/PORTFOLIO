@@ -188,6 +188,10 @@ D. HERO SECTION
         2. Hero Page
 
             * Create a page that creates a new blog post
+                1. You will have input fields for the:
+                    - Title
+                    - Sub-title
+                    - Button
 
     - 
 
