@@ -88,6 +88,16 @@
     <script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
+
+    {{-- SHOW DYNAMIC VALIDATION ERRORS --}}
+    <script src="//cd"></script>
+    <script>
+        @if (!empty($errors->all()))
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}")
+            @endforeach
+        @endif
+    </script>
 </body>
 
 </html>
