@@ -63,25 +63,24 @@ class HeroController extends Controller
             $image = $request->file('image');
             $imageName = rand().$image->getClientOriginalName(); // GRABS THE FILE'S ORIGINAL NAME, THE METHOD RETURNS THE FILENAME AND ITS EXTENSION, IT MAKES SURE EVERY FILE YOU UPLOAD IS UNIQUE
             $image->move(public_path('/uploads'), $imageName); // STORES THE IMAGE INTO THE UPLOADS FOLDER
-
             $imagePath = "/uploads/".$imageName; // SAVES THE IMAGE PATH INTO THE DB
-
-            // dd($imagePath);
-
-            // CHECKS IF DATA EXISTS AND THEN CREATES IT OR UPDATES IT
-            Hero::updateOrCreate(
-                ['id' => $id],
-                [
-                    'title' => $request->title,
-                    'sub_title' => $request->sub_title,
-                    'btn_text' => $request->btn_text,
-                    'btn_url' => $request->btn_url,
-                    'btn_url' => $imagePath,
-                ]
-            );
-
-            dd('SUCCESS!');
         }
+
+        // CHECKS IF DATA EXISTS AND THEN CREATES IT OR UPDATES IT
+        Hero::updateOrCreate(
+            ['id' => $id],
+            [
+                'title' => $request->title,
+                'sub_title' => $request->sub_title,
+                'btn_text' => $request->btn_text,
+                'btn_url' => $request->btn_url,
+                // 'image' => $imagePath,
+                'image' => isset($imagePath) ? $imagePath : '', // IF THE VAR IS NOT SET, IT SETS IT TO EMPTY, IF IT IS SET, IT ASSIGNS ITS VALUE TO BE THE $imageParth VAR
+            ],
+        );
+
+        toastr()->success('Updated Successfully!', 'Congrats!');
+        return redirect()->back();
     }
 
     /**
