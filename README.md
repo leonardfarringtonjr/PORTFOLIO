@@ -187,11 +187,16 @@ D. HERO SECTION
 
         2. Hero Page
 
-            * Create a page that creates a new blog post
-                1. You will have input fields for the:
-                    - Title
-                    - Sub-title
-                    - Button
+            * YOU WANT TO CREATE A PAGE THAT HAS INPUT FIELDS THAT UPDATES THE ELEMENTS OF THE HERO SECTION
+                - TITLE
+                - SUB-TITLE
+                - BACKGROUND IAMGE
+
+            * WRAP ALL OF THE INPUT FIELDS INSIDE A FORM
+
+            * MAKE THE FORM DYNAMIC
+
+                1. ADD NAMES TO THE FORM
 
     - 
 
