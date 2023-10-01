@@ -194,3 +194,15 @@ M.
 
 N.
 
+Z. LARAVEL
+
+    1. When you create a controller you must also create a model
+
+        // php artisan make:controller Controller
+
+        // php artisan make:
+
+    2. You should make controllers for your admin
+
+    2. When you create a controller in Laravel it will have premade methods
+
