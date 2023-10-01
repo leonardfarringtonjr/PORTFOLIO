@@ -30,7 +30,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="title">
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub-Title</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea name="" id="" class="form-control" style="height: 100px;"></textarea>
+                                    <textarea name="" id="" class="form-control" style="height: 100px;" name="sub-title"></textarea>
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button Text</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="button_text">
                                 </div>
                             </div>
 
@@ -54,7 +54,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button URL</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="button_url">
                                 </div>
                             </div>
 
@@ -63,7 +63,7 @@
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Hero Image</label>
                                 <div class="col-sm-12 col-md-7">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <input type="file" class="custom-file-input" id="customFile" name="image">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                       </div>
                                   </div>
@@ -73,7 +73,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                 <div class="col-sm-12 col-md-7">
-                                  <button class="btn btn-primary">Update</button>
+                                  <button class="btn btn-primary" name="">Update</button>
                                 </div>
                             </div>
 
