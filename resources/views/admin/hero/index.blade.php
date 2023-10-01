@@ -24,7 +24,7 @@
 
                         <div class="card-body">
 
-                            <form action="{{route('admin.hero.update',1)}}" method="POST">
+                            <form action="{{route('admin.hero.update',1)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 

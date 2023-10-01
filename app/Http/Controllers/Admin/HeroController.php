@@ -54,10 +54,21 @@ class HeroController extends Controller
     {
         $request->validate([
             'title' => ['required', 'max:200'],
-            'sub-title' => ['required', 'max:500']
+            'sub-title' => ['required', 'max:500'],
+            'image' => ['max:3000', 'image'],
         ]);
 
-        dd($request->all());
+        // dd($request->all());
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imageName = rand().$image->getClientOriginalName(); // GRABS THE FILE'S ORIGINAL NAME, THE METHOD RETURNS THE FILENAME AND ITS EXTENSION, IT MAKES SURE EVERY FILE YOU UPLOAD IS UNIQUE
+            $image->move(public_path('/uploads'), $imageName); // STORES THE IMAGE INTO THE UPLOADS FOLDER
+
+            $imagePath = "/uploads/".$imageName; // SAVES THE IMAGE PATH INTO THE DB
+
+            dd($imagePath);
+        }
     }
 
     /**
