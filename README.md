@@ -210,6 +210,14 @@ D. HERO SECTION
                     1. VALIDATE DATA
                     2. STORE DATA INTO VARS
                     3. SUBMIT DATA TO THE DB
+                5. 
+                6. REDIRECT AFTER THE DATA IS SUBMITTED
+                    // return redirect()->back();
+
+            3. ?
+                1. GET YOUR CURRENT DATA TO SHOW IN THE INPUT FIELD DYNAMICALLY
+                    * RETRIEVE THE DATA FROM THE DB USING THE find() AND STORE IT INTO A VAR
+                    * WHERE YOU WANT THAT DATA SET IT AS THE VALUE FROM THAT VAR -> value="{{$hero->title}}"
 
     - 
 

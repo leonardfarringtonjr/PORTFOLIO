@@ -13,7 +13,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('admin.hero.index');
+        $hero = Hero::find(1); // RETRIEVES A RECORD/ID FROM THE DB TABLE 'HERO' AND STORES IT INTO A VAR
+        return view('admin.hero.index', compact('hero'));
     }
 
     /**
@@ -74,7 +75,6 @@ class HeroController extends Controller
                 'sub_title' => $request->sub_title,
                 'btn_text' => $request->btn_text,
                 'btn_url' => $request->btn_url,
-                // 'image' => $imagePath,
                 'image' => isset($imagePath) ? $imagePath : '', // IF THE VAR IS NOT SET, IT SETS IT TO EMPTY, IF IT IS SET, IT ASSIGNS ITS VALUE TO BE THE $imageParth VAR
             ],
         );
