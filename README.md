@@ -214,11 +214,13 @@ D. HERO SECTION
                 6. REDIRECT AFTER THE DATA IS SUBMITTED
                     // return redirect()->back();
 
-            3. ?
+            3. HERO PART 3
                 1. GET YOUR CURRENT DATA TO SHOW IN THE INPUT FIELD DYNAMICALLY
                     * RETRIEVE THE DATA FROM THE DB USING THE find() AND STORE IT INTO A VAR
                     * WHERE YOU WANT THAT DATA SET IT AS THE VALUE FROM THAT VAR -> value="{{$hero->title}}"
                     * SET IMAGE TO REPLACE THE PREVIOUS ONE, NOT ADD TO THE UPLOAD FOLDER FOR NO REASON
+
+            4. HERO PART 4
 
     - 
 
