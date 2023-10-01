@@ -61,9 +61,9 @@ class HeroController extends Controller
             'image' => ['max:3000', 'image'],
         ]);
 
-        if($request->hasFile('image')){
+        $hero_image = Hero::find(1); // STORES THE HERO IMAGE
 
-            $hero_image = Hero::find(1); // STORES THE HERO IMAGE
+        if($request->hasFile('image')){
 
             if($hero_image && File::exists(public_path($hero_image->image))){ // CHECKS IF THERE IS A HERO IMAGE
                 File::delete(public_path($hero_image->image)); // DELETES THE OLD FILE
@@ -83,7 +83,8 @@ class HeroController extends Controller
                 'sub_title' => $request->sub_title,
                 'btn_text' => $request->btn_text,
                 'btn_url' => $request->btn_url,
-                'image' => isset($imagePath) ? $imagePath : '', // IF THE VAR IS NOT SET, IT SETS IT TO EMPTY, IF IT IS SET, IT ASSIGNS ITS VALUE TO BE THE $imageParth VAR
+                // 'image' => isset($imagePath) ? $imagePath : '', // IF THE VAR IS NOT SET, IT SETS IT TO EMPTY, IF IT IS SET, IT ASSIGNS ITS VALUE TO BE THE $imageParth VAR
+                'image' => isset($imagePath) ? $imagePath : $hero_image->image,
             ],
         );
 

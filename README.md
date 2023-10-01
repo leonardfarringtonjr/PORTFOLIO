@@ -221,6 +221,10 @@ D. HERO SECTION
                     * SET IMAGE TO REPLACE THE PREVIOUS ONE, NOT ADD TO THE UPLOAD FOLDER FOR NO REASON
 
             4. HERO PART 4
+                1. MAKE THE ELEMENTS OF THE HERO SECTION DYNAMIC
+                    * PASS DATA FROM YOUR CONTROLLER TO THE VIEW CONTAINING YOUR HERO AREA
+                    * WHEN YOU UPDATE YOUR DATA KEEP YOUR CURRENT BACKGROUND IMAGE
+                        1. USE A TERNARY OPERATOR TO CHECK IF THE VALUE OF THE IMAGE IS SET, IF NOT, SET IT TO THE CURRENT IMAGE IN THE DB
 
     - 
 
@@ -247,17 +251,8 @@ M.
 
 N.
 
-Z. LARAVEL
+Z. CHANGES FOR LATER
 
-    1. When you create a controller you must also create a model
-
-        // php artisan make:controller Controller
-
-        // php artisan make:
-
-    2. You should make controllers for your admin
-
-    3. When you create a controller in Laravel it will have premade methods
-
-    4.
+    1. YOUR NAME DOESN'T FIT
+    2. THE PARALLAX SCROLLING IS ALITTLE BROKEN
 
