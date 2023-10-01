@@ -32,6 +32,8 @@
 
             @include('admin.layouts.sidebar')
 
+            @include('admin.layouts.navbar')
+
             <!-- Main Content -->
             <div class="main-content">
 
