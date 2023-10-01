@@ -170,7 +170,27 @@ C. FRONT-END
             * AFTER YOU CREATE A PAGE, CREATE A ROUTE, THEN TEST IF THE ROUTE TAKES YOU TO THAT PAGE
 
     3. MASTER - FRONTEND DETAILS PAGE
+
 D. HERO SECTION
+    
+    - Setup
+
+        1. Create a controller and model specifically for handling data related to the Hero section
+
+            * When you create a controller you must also create a model
+
+            * You should make controllers for your admin routes
+
+                - php artisan make:controller Controller
+
+                - php artisan make:model
+
+        2. Hero Page
+
+            * Create a page that creates a new blog post
+
+    - 
+
     1. MAKE YOUR TITLE DYNAMIC
     2. MAKE THE IMAGE DYNAMIC
 
@@ -204,5 +224,7 @@ Z. LARAVEL
 
     2. You should make controllers for your admin
 
-    2. When you create a controller in Laravel it will have premade methods
+    3. When you create a controller in Laravel it will have premade methods
+
+    4.
 
