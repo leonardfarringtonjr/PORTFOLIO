@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hero;
 use Illuminate\Http\Request;
 
 class HeroController extends Controller
@@ -65,7 +66,21 @@ class HeroController extends Controller
 
             $imagePath = "/uploads/".$imageName; // SAVES THE IMAGE PATH INTO THE DB
 
-            dd($imagePath);
+            // dd($imagePath);
+
+            // CHECKS IF DATA EXISTS AND THEN CREATES IT OR UPDATES IT
+            Hero::updateOrCreate(
+                ['id' => $id],
+                [
+                    'title' => $request->title,
+                    'sub_title' => $request->sub_title,
+                    'btn_text' => $request->btn_text,
+                    'btn_url' => $request->btn_url,
+                    'btn_url' => $imagePath,
+                ]
+            );
+
+            dd('SUCCESS!');
         }
     }
 
