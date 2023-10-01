@@ -1,5 +1,5 @@
 <!-- Header-Area-Start -->
-<header class="header-area parallax-bg" id="home-page" style="background: url('{{ asset($hero->image) }}');">
+<header class="header-area parallax-bg" id="home-page" style="background-image: url('{{ asset($hero->image) }}'); background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
