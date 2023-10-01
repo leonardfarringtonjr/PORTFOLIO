@@ -37,17 +37,37 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub-Title</label>
                                 <div class="col-sm-12 col-md-7">
+                                    <textarea name="" id="" class="form-control" style="height: 100px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- BUTTON TEXT --}}
+                        <div class="card-body">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button Text</label>
+                                <div class="col-sm-12 col-md-7">
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
 
-                        {{-- BUTTON --}}
+                        {{-- BUTTON URL --}}
                         <div class="card-body">
                             <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button URL</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- HERO IMAGE --}}
+                        <div class="card-body">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Background Image</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="file" class="form-control">
                                 </div>
                             </div>
                         </div>
