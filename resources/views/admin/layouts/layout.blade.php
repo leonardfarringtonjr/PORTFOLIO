@@ -23,6 +23,9 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+
+    {{-- FOR TOASTR.JS VALIDATION NOTIFICATIONS --}}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -90,7 +93,7 @@
     <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
 
     {{-- SHOW DYNAMIC VALIDATION ERRORS --}}
-    <script src="//cd"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         @if (!empty($errors->all()))
             @foreach ($errors->all() as $error)

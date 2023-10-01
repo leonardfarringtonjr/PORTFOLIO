@@ -110,6 +110,9 @@
         3. Make the fields dynamic
             * All data connected to the 'user profile' page is in the 'profile' folder
             * Inside of a <form> should always be a @csrf token
+
+                // @csrf -> in PHP/LARAVEL, creates a hidden input field containing the CSRF token. (Cross-Site)
+
             * How to put default values into input fields -> you can pull the old user from the $user var within the $request var
             * you need an error message just in-case something goes wrong whenever the user inputs data
             * You can add notifications from Toastr.js ->
@@ -197,6 +200,12 @@ D. HERO SECTION
             * MAKE THE FORM DYNAMIC
 
                 1. ADD NAMES TO THE FORM
+                2. CREATE DATABASE FIELDS IN THE MIGRATIONS FOR EACH INPUT FIELD
+                    * php artisan migrate to seed the db
+                3. YOU WILL USE THE UPDATE METHOD IN YOUR CONTROLLER, BECAUSE YOU'RE USING THE FORM TO UPDATE DATA
+                    * AFTER YOU CREATE A FORM -> YOU CREATE A DB -> THEN YOU TEST IT TO SEE IF YOU CAN GET THE DATA
+                    * ADD VALIDATION TO ENSURE THAT YOUR INPUT FIELDS ARE RECIEVING DATA WHEN THE UPDATE BUTTON IS USED
+                    * ADD NOTIFICATIONS TO SEE IF THE DATA WAS SUCCESSFULLY SUBMITTED -> AND THEM TO YOUR SITE DYNAMICALLY USING AN IF/ELSE
 
     - 
 

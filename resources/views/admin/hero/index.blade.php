@@ -24,7 +24,9 @@
 
                         <div class="card-body">
 
-                            <form action="post">
+                            <form action="{{route('admin.hero.update',1)}}" method="POST">
+                                @csrf
+                                @method('PUT')
 
                             {{-- TITLE --}}
                             <div class="form-group row mb-4">
@@ -46,7 +48,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button Text</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control" name="button_text">
+                                    <input type="text" class="form-control" name="btn_text">
                                 </div>
                             </div>
 
@@ -54,7 +56,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Button URL</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" class="form-control" name="button_url">
+                                    <input type="text" class="form-control" name="btn_url">
                                 </div>
                             </div>
 
