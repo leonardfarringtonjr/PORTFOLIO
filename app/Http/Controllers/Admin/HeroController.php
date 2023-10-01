@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Hero;
 use Illuminate\Http\Request;
+use File;
 
 class HeroController extends Controller
 {
@@ -61,6 +62,13 @@ class HeroController extends Controller
         ]);
 
         if($request->hasFile('image')){
+
+            $hero_image = Hero::find(1); // STORES THE HERO IMAGE
+
+            if($hero_image && File::exists(public_path($hero_image->image))){ // CHECKS IF THERE IS A HERO IMAGE
+                File::delete(public_path($hero_image->image)); // DELETES THE OLD FILE
+            }
+
             $image = $request->file('image');
             $imageName = rand().$image->getClientOriginalName(); // GRABS THE FILE'S ORIGINAL NAME, THE METHOD RETURNS THE FILENAME AND ITS EXTENSION, IT MAKES SURE EVERY FILE YOU UPLOAD IS UNIQUE
             $image->move(public_path('/uploads'), $imageName); // STORES THE IMAGE INTO THE UPLOADS FOLDER
