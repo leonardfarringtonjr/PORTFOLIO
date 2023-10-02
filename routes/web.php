@@ -60,6 +60,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('hero', HeroController::class);
 
     // ABOUT PAGE
-    Route::resource('about', AboutController::class);
-    // Route::resource('about', AboutController::class); // we declare the 'about' route
+    Route::resource('about', AboutController::class); // we declare the 'about' route
+
 });
