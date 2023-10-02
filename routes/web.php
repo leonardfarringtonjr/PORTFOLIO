@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -54,5 +55,11 @@ require __DIR__ . '/auth.php';
 // as key -> adds the prefix to your route names
 // 'admin' is the prefix to all routes you put into here
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    // HERO PAGE
     Route::resource('hero', HeroController::class);
+
+    // ABOUT PAGE
+    Route::resource('about', AboutController::class);
+    // Route::resource('about', AboutController::class); // we declare the 'about' route
 });
