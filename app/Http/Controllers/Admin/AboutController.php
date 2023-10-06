@@ -25,25 +25,11 @@ class AboutController extends Controller
             'description' => ['max: 300']
         ]);
 
-        // // STORES THE ABOUT IMAGE
-        // $about_image = About::find(1);
-
-        // if($request->hasFile('image')){
-
-        //     if($about_image && File::exists(public_path($about_image->image))){ // CHECKS IF THERE IS A HERO IMAGE
-        //         File::delete(public_path($about_image->image)); // DELETES THE OLD FILE
-        //     }
-
-        //     $image = $request->file('image');
-        //     $imageName = rand().$image->getClientOriginalName(); // GRABS THE FILE'S ORIGINAL NAME, THE METHOD RETURNS THE FILENAME AND ITS EXTENSION, IT MAKES SURE EVERY FILE YOU UPLOAD IS UNIQUE
-        //     $image->move(public_path('/uploads'), $imageName); // STORES THE IMAGE INTO THE UPLOADS FOLDER
-        //     $imagePath = "/uploads/".$imageName; // SAVES THE IMAGE PATH INTO THE DB
-        // }
-
         $about = About::first(); // STORES THE MODEL ROW
         $imagePath = handleUpload('image',$about); // RETURNS THE PATH OF THE IMAGE
 
-        // CHECKS IF DATA EXISTS AND THEN CREATES IT OR UPDATES IT
+        // (2) SENDS THE DATA TO THE DB
+        // CHECKS IF DATA EXISTS AND THEN CREATES IT OR UPDATES IT IN THE DB
         About::updateOrCreate(
             ['id' => $id], // CHECKS IF WE HAVE AN 'ID' OF '1' // IF NOT, IT CREATES A NEW ENTRY // IF SO, IT UPDATES THE ENTRY
             [
