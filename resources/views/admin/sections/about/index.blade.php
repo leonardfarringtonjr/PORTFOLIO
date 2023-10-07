@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Update About Section</h4>
+                            <h4 id="test">Update About Section</h4>
                         </div>
 
                         <div class="card-body">
@@ -29,7 +29,7 @@
 
                                 {{-- IMAGE --}}
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" >Thumbnail</label>
                                     <div class="col-sm-12 col-md-7">
                                         <div id="image-preview" class="image-preview">
                                             <label for="image-upload" id="image-label">Choose File</label>
@@ -42,7 +42,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="title" value="">
+                                        <input type="text" class="form-control" name="title" value="{{$about->title}}">
                                     </div>
                                 </div>
 
@@ -50,7 +50,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub-Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea id="" class="form-control" style="height: 100px;" name="sub_title"></textarea>
+                                        <textarea class="form-control" style="height: 100px;" name="sub_title">{{$about->sub_title}}</textarea>
                                     </div>
                                 </div>
 
@@ -58,7 +58,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea id="" class="summernote" style="height: 100px;" name="description"></textarea>
+                                        <textarea class="summernote" style="height: 100px;" name="description">{{$about->description}}</textarea>
                                     </div>
                                 </div>
 
