@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('hero', HeroController::class);
 
     // TYPER TITLE
-    Route::resource('typer', TyperTitleController::class);
+    Route::resource('typer-title', TyperTitleController::class); // WHEN YOU USE php artisan route:list // IT WILL CREATE A ROUTE FOR WHATEVER IS THE FIRST PARAM // admin/type-title/
 
     // ABOUT PAGE
     Route::resource('about', AboutController::class); // we declare the 'about' route
