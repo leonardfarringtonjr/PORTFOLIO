@@ -274,4 +274,5 @@ Z. CHANGES FOR LATER
     6. Sec 48 - 211.
         // can use @push to use jquery
     7. Admin and Dashboard are always selected even when you're on a different page -> the tutorial doesn't have this problem
+    8. Dropdown doesn't stay open and the page i'm on isn't highlighted when I am on a dropdown link
 

@@ -20,7 +20,7 @@ class TyperTitleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.typer-title.create');
     }
 
     /**
