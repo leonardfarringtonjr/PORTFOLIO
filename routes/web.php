@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,7 +61,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // HERO PAGE
     Route::resource('hero', HeroController::class);
 
+    // TYPER TITLE
+    Route::resource('typer', TyperTitleController::class);
+
     // ABOUT PAGE
     Route::resource('about', AboutController::class); // we declare the 'about' route
+
+    // PORTFOLIO / CATEGORY PAGE
+    Route::resource('category', CategoryController::class);
 
 });

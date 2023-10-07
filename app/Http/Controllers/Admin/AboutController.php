@@ -23,7 +23,7 @@ class AboutController extends Controller
             'image' => ['image', 'max:5000'],
             'title' => ['required', 'max:200'],
             'sub_title' => ['required', 'max:500'],
-            'description' => ['max: 300']
+            'description' => ['required', 'max:10000'],
         ]);
 
         $about = About::first(); // STORES THE MODEL ROW
