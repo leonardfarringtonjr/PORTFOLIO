@@ -20,7 +20,7 @@ class AboutController extends Controller
 
         // (1) VALIDATE THE DATA
         $request->validate([
-            'image' => ['required', 'image'],
+            'image' => ['image', 'max:5000'],
             'title' => ['required', 'max:200'],
             'sub_title' => ['required', 'max:500'],
             'description' => ['max: 300']
