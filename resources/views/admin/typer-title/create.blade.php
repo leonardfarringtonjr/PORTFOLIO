@@ -12,6 +12,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{route('admin.hero.index')}}">Hero</a></div>
+                <div class="breadcrumb-item"><a href="{{route('admin.typer-title.index')}}">Typer Title</a></div>
                 <div class="breadcrumb-item"><a href="{{route('admin.typer-title.create')}}">Create</a></div>
             </div>
         </div>
