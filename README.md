@@ -273,4 +273,5 @@ Z. CHANGES FOR LATER
     5. CHANGE COPYRIGHT AT THE BOTTOM
     6. Sec 48 - 211.
         // can use @push to use jquery
+    7. Admin and Dashboard are always selected even when you're on a different page -> the tutorial doesn't have this problem
 

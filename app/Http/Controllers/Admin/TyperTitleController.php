@@ -12,7 +12,7 @@ class TyperTitleController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.typer-title.index');
     }
 
     /**

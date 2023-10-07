@@ -11,14 +11,14 @@
             <li class="nav-item active">
                 <a href="{{ route('dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Dropdown</span></a>
                 <ul class="dropdown-menu" style="display: none;">
                     <li><a class="nav-link" href="">test</a></li>
 
                 </ul>
-            </li>
+            </li> --}}
             <li class="menu-header">Sections</li>
 
             {{-- SIDEBAR LINKS --}}
@@ -28,7 +28,7 @@
                     <span>Hero</span></a>
                 <ul class="dropdown-menu" style="display: none;">
                     <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Hero Image</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Typer Title</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.typer-title.index') }}">Typer Title</a></li>
                 </ul>
             </li>
 
@@ -41,7 +41,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Portfolio</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Category</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
                 </ul>
             </li>
 
