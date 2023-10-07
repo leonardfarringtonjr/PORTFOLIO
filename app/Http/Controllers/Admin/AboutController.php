@@ -11,7 +11,8 @@ class AboutController extends Controller
 {
     // public function index(Request $request, string $id){
     public function index(Request $request){
-        $about = About::find(1); // WE SEARCH THE 'ABOUT' MODEL FOR ID '1'
+        // $about = About::find(1); // WE SEARCH THE 'ABOUT' MODEL FOR ID '1' // STORES ALL THE DATA FROM THE ABOUT MODEL INTO A VAR
+        $about = About::first();
         return view('admin.sections.about.index', compact('about')); // WE PASS THE VAR 'ABOUT' TO THE VIEW
     }
 

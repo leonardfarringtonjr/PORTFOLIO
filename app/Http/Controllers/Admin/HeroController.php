@@ -15,7 +15,7 @@ class HeroController extends Controller
     public function index()
     {
         $hero = Hero::find(1); // RETRIEVES A RECORD/ID FROM THE DB TABLE 'HERO' AND STORES IT INTO A VAR TO BE USED WITHIN THE VIEW IT RETURNS
-        return view('admin.hero.index', compact('hero'));
+        return view('admin.sections.hero.index', compact('hero'));
     }
 
     /**

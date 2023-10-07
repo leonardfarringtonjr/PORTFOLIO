@@ -78,3 +78,17 @@
         </div>
     </section>
 @endsection
+
+@push('scripts') {{-- @push IS A DIRECTIVE THAT INCLUDES A SCRIPT IN A SPECIFIC LOCATION --}}
+    <script>
+        $(document).ready(function(){
+            @if (isset($about) && isset($about->image)) // YOU SHOULD ALWAYS CHECK IF A VAR EXISTS AND HAS THE EXPECTED PROPERTIES BEFORE USING IT
+                $('#image-preview').css({ // TARGETS THE HTML ELEMENT WITH THE ID "image-preview"
+                    'background-image': 'url({{asset($about->image)}}")', // WHEN ECHOING VARS IN BLADE TEMPLATES, YOU USE CURLY BRACES TO AUTOMATICALLY ESCAPE OUTPUT // THIS PROTECTS YOU FROM XSS ATTACKS
+                    'background-size': 'cover',
+                    'background-position': 'center center'
+                })
+            @endif
+        });
+    </script>
+@endpush
