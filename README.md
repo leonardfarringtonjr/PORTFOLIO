@@ -272,8 +272,10 @@ Z. CHANGES FOR LATER
     4. THE DROPDOWNS BLINK WHEN YOU CLICK THEM IN THE SIDEBAR
     5. CHANGE COPYRIGHT AT THE BOTTOM
     6. Sec 48 - 211.
-        // can use @push to use jquery
+        // cant use @push to use jquery
+        // fixed - you must include @stack('scripts') into your layout
     7. Admin and Dashboard are always selected even when you're on a different page -> the tutorial doesn't have this problem
     8. Dropdown doesn't stay open and the page i'm on isn't highlighted when I am on a dropdown link
     9. All of the links -> Dashboard / Hero -> check and make sure they are all correct
+    10. + on Typer Titles buttons
 

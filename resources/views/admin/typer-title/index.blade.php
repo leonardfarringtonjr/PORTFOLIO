@@ -25,10 +25,14 @@
                             </div>
                         </div>
 
-                        <div class="card-body"></div>
+                        <div class="card-body">{{ $dataTable->table() }}</div> {{-- YOU CALL THE $dataTable DOUBLE INSTANCE, THEN THE TABLE METHOD --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+@endpush

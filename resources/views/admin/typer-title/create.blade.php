@@ -26,15 +26,15 @@
                             {{-- SECOND TITLE --}}
                             <h4>Create Title</h4>
                             <div class="card-header-action">
-                                <a href="{{route('admin.typer-title.create')}}" class="btn btn-danger">View More<i class="fas fa-plus"></i></a>
+                                <a href="#" class="btn btn-success">View More<i class="fas fa-plus"></i></a>
                             </div>
                         </div>
 
                         <div class="card-body">
 
-                            <form action="{{route('admin.hero.update',1)}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('admin.typer-title.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
+                                @method('POST')
 
                             {{-- TITLE --}}
                             <div class="form-group row mb-4">
