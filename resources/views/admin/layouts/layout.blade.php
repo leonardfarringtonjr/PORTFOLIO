@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     {{-- NEEDED TO SHOT OUR DATATABLES DATA --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js']);
 
 </head>
 

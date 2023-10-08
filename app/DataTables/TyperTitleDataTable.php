@@ -23,7 +23,9 @@ class TyperTitleDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'typertitle.action')
+            ->addColumn('action', function(){
+                return '<a href="" class="btn btn-primary">edit</a><a href="" class="btn btn-danger">delete</a>';
+            })
             ->setRowId('id');
     }
 
@@ -52,14 +54,7 @@ class TyperTitleDataTable extends DataTable
                     //->dom('Bfrtip')
                     ->orderBy(1)
                     ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+                    ->buttons([]);
     }
 
     /**
@@ -70,15 +65,13 @@ class TyperTitleDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('id')->width(10),
+            Column::make('title'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(200)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('title'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 
