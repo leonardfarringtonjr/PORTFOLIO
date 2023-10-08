@@ -26,6 +26,9 @@
 
     {{-- FOR TOASTR.JS VALIDATION NOTIFICATIONS --}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    {{-- NEEDED TO SHOT OUR DATATABLES DATA --}}
+
 </head>
 
 <body>
@@ -102,6 +105,8 @@
             @endforeach
         @endif
     </script>
+
+    @stack('scripts') {{-- STACK DIRECTIVE // NEEDED TO USE @push METHOD // 'scripts' IS THE KEY // THIS IS WHERE WE ARE PUSHING OUR CODE INTO LATER --}}
 </body>
 
 </html>
