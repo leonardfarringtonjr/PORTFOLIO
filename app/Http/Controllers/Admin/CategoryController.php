@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(CategoryDataTable $dataTable){
+    public function index(CategoryDataTable $categoryDataTable)
+    {
 
-        return $dataTable->render('admin.sections.portfolio-category.index');
+        return $categoryDataTable->render('admin.sections.portfolio-category.index');
     }
 }

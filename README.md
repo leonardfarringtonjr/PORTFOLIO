@@ -278,4 +278,5 @@ Z. CHANGES FOR LATER
     8. Dropdown doesn't stay open and the page i'm on isn't highlighted when I am on a dropdown link
     9. All of the links -> Dashboard / Hero -> check and make sure they are all correct
     10. + on Typer Titles buttons
+    11. WHEN I RUN THE DATATABLES, THE DROPDOWN MENU BREAKS
 
