@@ -4,13 +4,42 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index(CategoryDataTable $categoryDataTable)
     {
-
         return $categoryDataTable->render('admin.sections.portfolio-category.index');
+    }
+
+    public function create(){
+        return view('admin.sections.portfolio-category.create');
+    }
+
+    public function store(Request $request){
+
+        // TEST
+        // return dd($request->all());
+
+        // VALIDATE
+        $request->validate([
+            'name' => ['required','max:100'],
+        ]);
+
+        // STORE
+        $category = new Category(); // CREATES A NEW INSTANCE OF THE 'CATEGORY' MODEL
+        $category->name = $request->name; // CREATES A NEW OBJECT OF THE 'CATEGORY' CLASS, PRESUMABLY AN ELOQUENT MODEL REPRESENTING A CATEGORY IN YOUR APP // ASSIGNS THE VALUE OF THE 'NAME' FIELD FROM THE INCOMING REQUEST -> TO THE 'NAME' PROPERTY OF THE 'CATEGORY' OBJECT
+        $category->slug = \Str::slug($request->name); // GENERATES A SLUG FROM THE 'NAME' FIELD USING '\STR::SLUG' METHOD. // A SLUG IS A USER-FRIENDLY VERSION OF A STRING, USED TO CREATE CLEAN HUMAN-READABLE URLS // CREATES SEO FRIENDLY URLS
+        $category->save(); // THIS LINE PERSISTS THE 'CATEGORY' OBJECT, WHICH HAS THE NEW ASSIGNED DATA, TO THE DB
+
+        // NOTIFICATION
+        toastr()->success('Updated Successfully!', 'Congrats!');
+        return redirect()->route('admin.category.index');
+    }
+
+    public function show(){
+        //
     }
 }
