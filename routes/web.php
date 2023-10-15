@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\PortfolioItem;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -67,7 +68,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // ABOUT PAGE
     Route::resource('about', AboutController::class); // we declare the 'about' route
 
+    /* PORTFOLIO ROUTES */
+
     // PORTFOLIO / CATEGORY PAGE
     Route::resource('category', CategoryController::class);
+
+    // PORTFOLIO / PORTFOLIO ITEM
+    Route::resource('portfolio-item', PortfolioItem::class); // the first param is the route you create // THIS IS ROUTE DECLARATION / Route:resource defines a RESTFUL ROUTE / The class specifies the controller that will handle the request / When you use Route::resource, LARAVEL AUTO GENERATES THE NECESSARY ROUTES FOR IT
 
 });

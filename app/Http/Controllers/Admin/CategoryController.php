@@ -15,11 +15,13 @@ class CategoryController extends Controller
         return $categoryDataTable->render('admin.sections.portfolio.index');
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.sections.portfolio.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // VALIDATE
         $request->validate([
@@ -46,20 +48,22 @@ class CategoryController extends Controller
         $category->delete();
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
 
         // GRABS THE ROW FROM THE DB
         $category = Category::findOrFail($id);
         return view('admin.sections.portfolio.edit', compact('category')); // ALLOWS US TO ACCESS THE 'CATEGORY' VAR WITHIN OUR VIEW
     }
 
-    public function show($id){
-        $category = Category::findOrFail($id);
-        return view('admin.sections.portfolio.destroy', compact('category'));
-    }
+    // public function show($id){
+    //     $category = Category::findOrFail($id);
+    //     return view('admin.sections.portfolio.destroy', compact('category'));
+    // }
 
     // UPDATES DATA IN THE DB
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
 
         // VALIDATE
         $request->validate([
