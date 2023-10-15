@@ -10,7 +10,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Portfolio</a></div>
-                <div class="breadcrumb-item"><a href="{{route('admin.category.index')}}">Category</a></div>
+                <div class="breadcrumb-item"><a href="{{route('admin.portfolio-item.index')}}">Portfolio Item</a></div>
             </div>
         </div>
 
@@ -19,9 +19,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Categories</h4>
+                            <h4>All Portfolio Items</h4>
                             <div class="card-header-action">
-                                <a href="{{route('admin.category.create')}}" class="btn btn-success">Create New <i class="fas fa-plus"></i></a>
+                                <a href="{{route('admin.portfolio-item.create')}}" class="btn btn-success">Create New <i class="fas fa-plus"></i></a>
                             </div>
                         </div>
 

@@ -14,4 +14,16 @@ class PortfolioItem extends Controller
     {
         return $portfolioItemDataTable->render('admin.sections.portfolio.portfolio-item.index'); // RENDERS THE DATATABLE
     }
+
+    // CREATE
+    public function create()
+    {
+        return view('admin.sections.portfolio.portfolio-item.create');
+    }
+
+    // STORE NEW DATA
+    public function store()
+    {
+        //
+    }
 }
