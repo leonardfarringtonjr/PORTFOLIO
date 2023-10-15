@@ -11,11 +11,11 @@ class CategoryController extends Controller
 {
     public function index(CategoryDataTable $categoryDataTable)
     {
-        return $categoryDataTable->render('admin.sections.portfolio-category.index');
+        return $categoryDataTable->render('admin.sections.portfolio.index');
     }
 
     public function create(){
-        return view('admin.sections.portfolio-category.create');
+        return view('admin.sections.portfolio.create');
     }
 
     public function store(Request $request){
@@ -39,7 +39,35 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index');
     }
 
+    public function edit($id){
+
+        // GRABS THE ROW FROM THE DB
+        $category = Category::findOrFail($id);
+        return view('admin.sections.portfolio.edit', compact('category')); // ALLOWS US TO ACCESS THE 'CATEGORY' VAR WITHIN OUR VIEW
+    }
+
     public function show(){
-        //
+        return view('admin.sections.portfolio.destroy');
+    }
+
+    public function update(Request $request, $id){
+
+        // VALIDATE
+        $request->validate([
+            'name' => ['required','max:100']
+        ]);
+
+        // STORE
+        $category = Category::findOrFail($id); // GRABS THE ROW FROM THE DB WITH THE MATCHING ID
+        $category->name = $request->name; // WE ACCESS THE COLUMN FROM THAT ROW AND STORE IT
+        $category->slug = \Str::slug($request->name); // WE ASSIGN IT A NEW VALUE
+        $category->save();
+
+        // NOTIFY
+        toastr()->success('Updated Successfully!', 'Congrats!');
+
+        // REDIRECT
+        return redirect()->route('admin.category.index');
+
     }
 }
