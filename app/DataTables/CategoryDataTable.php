@@ -26,7 +26,7 @@ class CategoryDataTable extends DataTable
             ->addColumn('action', function($query){ // THE 'ACTION' COLUMN WILL HAVE BUTTONS IN IT
                 return
                 '<a href="'.route('admin.category.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                <a href="'.route('admin.category.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>';
+                <a href="'.route('admin.category.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>'; // WE PASS THE ID OF THE CATEGORY TO THE ROUTE
             })
             ->setRowId('id');
     }
@@ -53,17 +53,9 @@ class CategoryDataTable extends DataTable
             ->setTableId('category-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            //->dom('Bfrtip')
-            ->orderBy(1)
+            ->orderBy(0)
             ->selectStyleSingle()
-            ->buttons([
-                Button::make('excel'),
-                Button::make('csv'),
-                Button::make('pdf'),
-                Button::make('print'),
-                Button::make('reset'),
-                Button::make('reload')
-            ]);
+            ->buttons([]);
     }
 
     /**

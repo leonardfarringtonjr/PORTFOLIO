@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\TyperTitle;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -20,9 +21,6 @@ class CategoryController extends Controller
 
     public function store(Request $request){
 
-        // TEST
-        // return dd($request->all());
-
         // VALIDATE
         $request->validate([
             'name' => ['required','max:100'],
@@ -36,7 +34,16 @@ class CategoryController extends Controller
 
         // NOTIFICATION
         toastr()->success('Updated Successfully!', 'Congrats!');
+
+        // RETURN
         return redirect()->route('admin.category.index');
+    }
+
+    // DESTROYS DATA IN THE DB
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
     }
 
     public function edit($id){
@@ -46,10 +53,12 @@ class CategoryController extends Controller
         return view('admin.sections.portfolio.edit', compact('category')); // ALLOWS US TO ACCESS THE 'CATEGORY' VAR WITHIN OUR VIEW
     }
 
-    public function show(){
-        return view('admin.sections.portfolio.destroy');
+    public function show($id){
+        $category = Category::findOrFail($id);
+        return view('admin.sections.portfolio.destroy', compact('category'));
     }
 
+    // UPDATES DATA IN THE DB
     public function update(Request $request, $id){
 
         // VALIDATE

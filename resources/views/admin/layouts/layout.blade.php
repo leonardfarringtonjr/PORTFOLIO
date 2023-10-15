@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    {{-- PREVENTS CSRF TOKEN MISMATCH --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <title>Dashboard</title>
 
     <!-- General CSS Files -->
@@ -78,7 +81,8 @@
     <link rel="stylesheet"
         href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css') }}"
         integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
     <script src="{{ asset('assets/js/plugins/summernote-bs4.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery.uploadPreview.min.js') }}"></script>
@@ -99,12 +103,63 @@
 
     {{-- SHOW DYNAMIC VALIDATION ERRORS --}}
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    {{-- SWEETALERT --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script>
         @if (!empty($errors->all()))
             @foreach ($errors->all() as $error)
                 toastr.error("{{ $error }}")
             @endforeach
         @endif
+    </script>
+
+    <script>
+        $(document).ready(function() {
+
+            // PREVENTS CSRF TOKEN MISMATCH
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('body').on('click', '.delete-item', function(e) {
+                e.preventDefault(); // prevents the page from reloading when you click the delete button
+
+                let deleteUrl = $(this).attr('href');
+
+                // SWEET ALERT
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'DELETE',
+                            url: deleteUrl,
+                            success: function(data) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                )
+                                window.location.reload(); // reloads the page
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(error);
+                            }
+                        })
+                    }
+                })
+            })
+        })
     </script>
 
     @stack('scripts') {{-- STACK DIRECTIVE // NEEDED TO USE @push METHOD // 'scripts' IS THE KEY // THIS IS WHERE WE ARE PUSHING OUR CODE INTO LATER --}}
