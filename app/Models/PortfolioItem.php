@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class PortfolioItem extends Model
 {
     use HasFactory;
+
 }

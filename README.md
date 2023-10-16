@@ -298,6 +298,15 @@ G. PORTFOLIO SECTION
             2. CREATE THE METHOD WITHIN THE CONTROLLER
             3. CREATE THE .BLADE
 
+        * IMAGE INPUT FIELDS
+            1. YOU HAVE TO STORE THE IMAGE AT THE DESIGNATED PATH
+            2. THEN YOU STORE THAT PATH INTO THE DB
+
+        * IF YOU MISNAME A CONTROLLER
+            1. THE MODEL AND THE CONTROLLER SHOULD HAVE DIFFERENT NAMES
+            2. CHECK THE ROUTE NAME
+            3. MAKE SURE THE CONTROLLER FILE HAS THE CORRECT NAME
+
 H. SKILLS SECTION
 
 I. EXPERIENCES SECTION
@@ -329,5 +338,17 @@ Z. CHANGES FOR LATER
     9. All of the links -> Dashboard / Hero -> check and make sure they are all correct
     10. + on Typer Titles buttons
     11. WHEN I RUN THE DATATABLES, THE DROPDOWN MENU BREAKS
-    12. 
+    12. Summernote description box isn't working anymore
+
+        // TESTS
+
+            1. CHECK THE NETWORK TAB IN DEV TOOLS
+            2. CONSOLE.LOG USING THIS.
+
+                // $(document).ready(function() {
+    console.log("Initializing Summernote");
+    $('#yourTextArea').summernote({
+        // Your Summernote options go here
+    });
+});
 
