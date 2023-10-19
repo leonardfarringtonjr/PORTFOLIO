@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItem;
 use App\Http\Controllers\Admin\PortfolioItemController;
+use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -77,4 +78,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // PORTFOLIO / PORTFOLIO ITEM
     Route::resource('portfolio-item', PortfolioItemController::class); // the first param is the route you create // THIS IS ROUTE DECLARATION / Route:resource defines a RESTFUL ROUTE / The class specifies the controller that will handle the request / When you use Route::resource, LARAVEL AUTO GENERATES THE NECESSARY ROUTES FOR IT
 
+    // PORTFOLIO / SECTION SETTINGS
+    Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
 });
