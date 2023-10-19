@@ -98,4 +98,10 @@ class PortfolioItemController extends Controller
         return redirect()->route('admin.portfolio-item.index');
 
     }
+
+    public function destroy($id){
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        deleteFileIfExists($portfolioItem->image);
+        $portfolioItem->delete();
+    }
 }

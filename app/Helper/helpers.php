@@ -34,3 +34,20 @@ function handleUpload($inputName, $model=null){
     }
 
 }
+
+/*
+use a try/catch, check if the data at the file path exists
+
+*/
+
+function deleteFileIfExists($filePath){
+
+    try{
+        if(\File::exists(public_path($filePath))){
+            \File::delete(public_path($filePath));
+        }
+    }catch(\Exception $e){
+        throw $e;
+    }
+
+}
