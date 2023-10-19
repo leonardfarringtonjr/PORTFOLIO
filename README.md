@@ -338,7 +338,10 @@ Z. CHANGES FOR LATER
     9. All of the links -> Dashboard / Hero -> check and make sure they are all correct
     10. + on Typer Titles buttons
     11. WHEN I RUN THE DATATABLES, THE DROPDOWN MENU BREAKS
-    12. Summernote description box isn't working anymore
+    12. Hero image isn't responsive
+    13. All of the <- need to be changed
+    14. The README needs to be changed
+    14. Summernote description box isn't working anymore
 
         // TESTS
 

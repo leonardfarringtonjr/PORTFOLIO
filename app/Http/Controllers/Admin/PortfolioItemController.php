@@ -24,6 +24,12 @@ class PortfolioItemController extends Controller
         return view('admin.sections.portfolio.portfolio-item.create', compact('categories'));
     }
 
+    public function edit($id){
+        $categories = Category::all();
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        return view('admin.sections.portfolio.portfolio-item.edit', compact('categories', 'portfolioItem')); // YOU ONLY HAVE TO PASS THE NAME
+    }
+
     // STORE NEW DATA
     public function store(Request $request)
     {
@@ -57,8 +63,39 @@ class PortfolioItemController extends Controller
     }
 
     // UPDATE
-    public function update()
+    public function update(Request $request, $id)
     {
-        //
+        // TEST
+        // dd($request->all());
+
+        // VALIDATE
+        $request->validate([
+            'image' => ['image','max:5000'],
+            'title' => ['required','max:200'],
+            'category_id' => ['required','numeric'],
+            'description' => ['required'],
+            'client' => ['max:200'],
+            'website' => ['url'], // requires the full https url
+        ]);
+
+        $portfolioItem = PortfolioItem::findOrFail($id); // WE ACCESS THE 'PORTFOLIOITEMS' MODEL // WE USE FINDORFAIL BECAUSE WE'RE UPDATING THE TABLE, NOT CREATING DATA
+
+        $imagePath = handleUpload('image', $portfolioItem->image);
+
+        // STORE
+        $portfolioItem->image = (!empty($imagePath) ? $imagePath : $portfolioItem->image);
+        $portfolioItem->title = $request->title;
+        $portfolioItem->category_id = $request->category_id;
+        $portfolioItem->description = $request->description;
+        $portfolioItem->client = $request->client;
+        $portfolioItem->website = $request->website;
+        $portfolioItem->save();
+
+        // NOTIFICATION
+        toastr()->success('Updated Successfully!', 'Congrats!');
+
+        // RETURN
+        return redirect()->route('admin.portfolio-item.index');
+
     }
 }
