@@ -79,6 +79,8 @@ class PortfolioItemDataTable extends DataTable
             Column::make('image')->width(100),
             Column::make('title'),
             Column::make('category'),
+            Column::make('description'),
+            Column::make('client'),
             Column::make('created_at'),
             Column::computed('action')
                   ->exportable(false)
