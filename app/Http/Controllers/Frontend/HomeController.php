@@ -33,4 +33,15 @@ class HomeController extends Controller
         ); // creates an array containing vars and their values // creates an array where the key is 'hero' // the data is then passed as data to the view
 
     }
+
+    public function showPortfolio($id){
+        $portfolioItem = PortfolioItem::findOrFail($id); // WE USE FINDORFAIL BECAUSE WE ARE GRABBING A SPECIFIC ROW WITH THE SPECIFIC ID
+        return view(
+            'frontend.pages.portfolio-pages.portfolio-details',
+            compact(
+                'id',
+                'portfolioItem'
+        )
+    );
+    }
 }

@@ -12,7 +12,7 @@
     @include('frontend.sections.testimonial')
 
     <!-- Skills -->
-    {{-- @include('frontend.sections.skills') --}}
+    @include('frontend.sections.skills')
 
     <!-- Experience -->
     @include('frontend.sections.experience')

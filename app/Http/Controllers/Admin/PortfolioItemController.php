@@ -79,7 +79,6 @@ class PortfolioItemController extends Controller
         ]);
 
         $portfolioItem = PortfolioItem::findOrFail($id); // WE ACCESS THE 'PORTFOLIOITEMS' MODEL // WE USE FINDORFAIL BECAUSE WE'RE UPDATING THE TABLE, NOT CREATING DATA
-
         $imagePath = handleUpload('image', $portfolioItem->image);
 
         // STORE
@@ -104,4 +103,5 @@ class PortfolioItemController extends Controller
         deleteFileIfExists($portfolioItem->image);
         $portfolioItem->delete();
     }
+
 }

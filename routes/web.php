@@ -27,6 +27,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('frontend.home');
 // });
 
+// FRONTEND ROUTES
+
+// DEFINES A SPECIFIC ACTION THAT SHOULD HAPPEN WHEN A USER ACCESSES A PARTICULAR URL USING THE HTTP GET METHOD // WHEN SOMEONE GOES TO THIS WEB ADDRESS, DO THIS
+// THE CONTROLLER AND METHOD THAT SHOULD BE EXECUTED WHEN THE USER ACCESSES THE URL
+// THE NAME I ASSIGN THE ROUTE GIVES ME A WAY TO INTERNALLY REFERENCE THE ROUTE // WHEN YOU CREATE A LINK, THE ROUTE TO GET BACK TO THE '/' PAGE IS SIMPLY 'HOME'
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // BLOG PAGE ROUTES
@@ -39,9 +44,10 @@ Route::get('/blog-details', function () {
 });
 
 // PORTFOLIO ROUTES
-Route::get('/portfolio-details', function () {
-    return view('frontend.pages.portfolio-pages.portfolio-details');
-});
+// Route::get('/portfolio-details', function () {
+//     return view('frontend.pages.portfolio-pages.portfolio-details');
+// });
+Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

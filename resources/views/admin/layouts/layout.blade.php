@@ -82,8 +82,7 @@
     <link rel="stylesheet"
         href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css') }}"
         integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="{{ asset('assets/js/plugins/summernote-bs4.js') }}"></script> {{-- SUMMERNOTE --}}
     <script src="{{ asset('assets/js/plugins/jquery.selectric.min.js') }}"></script>
@@ -146,12 +145,21 @@
                             type: 'DELETE',
                             url: deleteUrl,
                             success: function(data) {
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Your file has been deleted.',
-                                    'success'
-                                )
-                                window.location.reload(); // reloads the page
+
+                                if (data.status === 'error') {
+                                    Swal.fire(
+                                        'You Cannot Delete!',
+                                        'You must delete the Portfolio Item first!',
+                                        'error'
+                                    )
+                                } else {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your file has been deleted.',
+                                        'success'
+                                    )
+                                    window.location.reload(); // reloads the page
+                                }
                             },
                             error: function(xhr, status, error) {
                                 console.log(error);

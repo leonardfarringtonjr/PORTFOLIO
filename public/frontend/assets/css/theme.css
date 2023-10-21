@@ -1261,6 +1261,12 @@ Footer-Area
 14. Portfolio-Details
 -------------------------- */
 
+.img-fix {
+    height:700px;
+    object-fit:cover;
+    width:100%;
+}
+
 .blog-details .head-title,
 .portfolio-details .head-title {
     font-size: 45px;

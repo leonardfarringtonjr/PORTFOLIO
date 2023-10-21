@@ -26,13 +26,6 @@
         </div>
 
         {{-- PORTFOLIO ITEMS --}}
-
-        {{-- ,
-
-            'category_id' => ['required','numeric'],
-
-            'client' => ['max:200'], --}}
-
         <div class="portfolio-wrapper">
             <div class="row portfolios">
                 @foreach ($portfolioItems as $item)
@@ -43,7 +36,7 @@
                             </figure>
                             <div class="portfolio-content">
                                 <a href="{{ asset($item->image) ? e(asset($item->image)) : '' }}" data-lity class="icon"><i class="fas fa-plus"></i></a>
-                                <h4 class="title"><a href="{{ $item->website ? e($item->website) : '' }}">{{ $item->title ? e($item->title) : '' }}</a></h4>
+                                <h4 class="title"><a href="{{ route('show.portfolio',$item->id) }}">{{ $item->title ? e($item->title) : '' }}</a></h4>
                                 <div class="desc">
                                     <p>{{ $item->description ? e(Str::limit($item->description, 20)) : '' }}</p>
                                 </div>

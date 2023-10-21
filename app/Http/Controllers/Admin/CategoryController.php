@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\PortfolioItem;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,12 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-        $category->delete();
+        $hasItem = PortfolioItem::where('category_id', $category->id)->count(); // WE COUNT HOW MANY CATEGORY ID'S THERE ARE
+        if($hasItem === 0){
+            $category->delete(); // IF AN ITEM HAS NO CATEGORY, WE DONT WANT TO ALLOW THE USER TO DELETE IT
+            return true;
+        }
+        return response(['status' => 'error']);
     }
 
     public function edit($id)
@@ -55,11 +61,6 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         return view('admin.sections.portfolio.edit', compact('category')); // ALLOWS US TO ACCESS THE 'CATEGORY' VAR WITHIN OUR VIEW
     }
-
-    // public function show($id){
-    //     $category = Category::findOrFail($id);
-    //     return view('admin.sections.portfolio.destroy', compact('category'));
-    // }
 
     // UPDATES DATA IN THE DB
     public function update(Request $request, $id)
