@@ -47,6 +47,11 @@
                 </ul>
             </li>
 
+            {{-- EXPERIENCE --}}
+            <li class="nav-item">
+                <a href="{{route('admin.experience.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Experience</span></a>
+            </li>
+
             {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
             <li><a class="nav-link" href="features-post-create.html"><i class="far fa-square"></i> <span>Form
                         Page</span></a></li>

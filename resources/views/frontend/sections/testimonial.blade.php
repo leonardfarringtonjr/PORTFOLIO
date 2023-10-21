@@ -1,5 +1,5 @@
 <!-- Testimonial-Area-Start -->
-<section class="testimonial-area">
+<section class="testimonial-area section-padding-top">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3 text-center">

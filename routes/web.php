@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TyperTitleController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,10 +23,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('frontend.home');
-// });
 
 // FRONTEND ROUTES
 
@@ -86,4 +83,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // PORTFOLIO / SECTION SETTINGS
     Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
+
+    // EXPERIENCE SECTION
+    Route::resource('experience', ExperienceController::class);
 });

@@ -7,10 +7,19 @@
         - **Kernel.php**
     - Exceptions
         - **Handler.php**
+    - Helper -> contains all helper functions
+        - **helpers.php**
     - Http
-        - Controllers -> controllers handle the requests that come from routes and return views
-        - Middleware -> request filter
-    - Models -> responsible for communicating with your database
+        - Controllers
+        - Middleware
+    - Models
+        - **About.php**
+        - **Category.php**
+        - **Hero.php**
+        - **PortfolioItem.php**
+        - **PortfolioSectionSetting.php**
+        - **TyperTitle.php**
+        - **User.php**
     - Providers
     - View
 - Bootstrap
@@ -25,6 +34,8 @@
 - Public
     - assets
     - build
+    - frontend
+        - assets -> contains all the assets for the frontend
     - **.htaccess**
     - **favicon.ico**
     - **index.php** -> when your app is loaded, this is the first file your browser loads
