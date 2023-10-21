@@ -23,7 +23,7 @@
 
                         <div class="card-body">
 
-                            <form action="{{route('dashboard')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('admin.experience.update',1)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -42,7 +42,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="title" value="">
+                                        <input type="text" class="form-control" name="title" value="{{$experience->title ? e($experience->title) : ''}}">
                                     </div>
                                 </div>
 
@@ -50,7 +50,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote" style="height: 100px;" name="description"></textarea>
+                                        <textarea class="summernote" style="height: 100px;" name="description">{{$experience->description ? e($experience->description) : ''}}</textarea>
                                     </div>
                                 </div>
 
@@ -73,14 +73,14 @@
 
 @push('scripts')
 <script>
-    // $(document).ready(function(){
-    //     @if (isset($about) && isset($about->image)) // YOU SHOULD ALWAYS CHECK IF A VAR EXISTS AND HAS THE EXPECTED PROPERTIES BEFORE USING IT
-    //         $('#image-preview').css({ // TARGETS THE HTML ELEMENT WITH THE ID "image-preview"
-    //             'background-image': 'url("{{asset($about->image)}}")', // WHEN ECHOING VARS IN BLADE TEMPLATES, YOU USE CURLY BRACES TO AUTOMATICALLY ESCAPE OUTPUT // THIS PROTECTS YOU FROM XSS ATTACKS
-    //             'background-size': 'cover',
-    //             'background-position': 'center center'
-    //         })
-    //     @endif
-    // });
+    $(document).ready(function(){
+        @if (isset($experience) && isset($experience->image)) // YOU SHOULD ALWAYS CHECK IF A VAR EXISTS AND HAS THE EXPECTED PROPERTIES BEFORE USING IT
+            $('#image-preview').css({ // TARGETS THE HTML ELEMENT WITH THE ID "image-preview"
+                'background-image': 'url("{{asset($experience->image)}}")', // WHEN ECHOING VARS IN BLADE TEMPLATES, YOU USE CURLY BRACES TO AUTOMATICALLY ESCAPE OUTPUT // THIS PROTECTS YOU FROM XSS ATTACKS
+                'background-size': 'cover',
+                'background-position': 'center center'
+            })
+        @endif
+    });
 </script>
 @endpush

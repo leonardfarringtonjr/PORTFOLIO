@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Experience;
 use App\Models\Hero;
 use App\Models\About;
 use App\Models\PortfolioItem;
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategories = Category::all();
         $portfolioItems = PortfolioItem::all();
+        $experience = Experience::first();
         return view(
             'frontend.home',
             compact(
@@ -29,6 +31,7 @@ class HomeController extends Controller
                 'portfolioTitle',
                 'portfolioCategories',
                 'portfolioItems',
+                'experience',
             )
         ); // creates an array containing vars and their values // creates an array where the key is 'hero' // the data is then passed as data to the view
 
