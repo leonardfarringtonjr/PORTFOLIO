@@ -32,6 +32,12 @@
                 </ul>
             </li>
 
+            {{-- SERVICES --}}
+            <li class="nav-item">
+                <a href="{{route('admin.services.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Services</span></a>
+            </li>
+
+            {{-- ABOUT --}}
             <li class="nav-item active">
                 <a href="{{ route('admin.about.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>About</span></a>
             </li>
