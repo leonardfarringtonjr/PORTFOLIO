@@ -34,7 +34,7 @@
 
             {{-- SERVICES --}}
             <li class="nav-item">
-                <a href="{{route('admin.services.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Services</span></a>
+                <a href="{{route('admin.service-item.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Services</span></a>
             </li>
 
             {{-- ABOUT --}}

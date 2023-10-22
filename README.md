@@ -373,6 +373,10 @@ Z. CHANGES FOR LATER
     13. All of the <- need to be changed
     14. The README needs to be changed
     14. Summernote description box isn't working anymore
+    16. All service items -> when I create a 4th item, on the frontend, it sticks to the other boxes
+    17. Logo
+    18. Make sure all input values are escaped
+    19. Portfolio creating and editing is broken
 
         // TESTS
 

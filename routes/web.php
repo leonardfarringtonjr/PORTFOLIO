@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\PortfolioItem;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ServiceItemController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -71,7 +71,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // TYPER TITLE
     Route::resource('typer-title', TyperTitleController::class); // WHEN YOU USE php artisan route:list // IT WILL CREATE A ROUTE FOR WHATEVER IS THE FIRST PARAM // admin/type-title/
 
-    Route::resource('services', ServiceController::class);
+    // SERVICE PAGE
+    Route::resource('service-item', ServiceItemController::class);
 
     // ABOUT PAGE
     Route::resource('about', AboutController::class); // we declare the 'about' route

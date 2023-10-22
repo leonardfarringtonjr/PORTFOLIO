@@ -9,6 +9,7 @@ use App\Models\Hero;
 use App\Models\About;
 use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
+use App\Models\ServiceItem;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,6 +19,7 @@ class HomeController extends Controller
 
         // SECTIONS
         $hero = Hero::first(); // TAKES THE FIRST ROW FROM THE 'HERO' MODEL OF THE DB // STORES ITS DATA INTO A VAR
+        $serviceItems = ServiceItem::all();
         $about = About::first();
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategories = Category::all();
@@ -27,6 +29,7 @@ class HomeController extends Controller
             'frontend.home',
             compact(
                 'hero',
+                'serviceItems',
                 'about',
                 'portfolioTitle',
                 'portfolioCategories',
