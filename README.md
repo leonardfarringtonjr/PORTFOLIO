@@ -376,7 +376,11 @@ Z. CHANGES FOR LATER
     16. All service items -> when I create a 4th item, on the frontend, it sticks to the other boxes
     17. Logo
     18. Make sure all input values are escaped
-    19. Portfolio creating and editing is broken
+    19. Portfolio pages for every category -> as it expands, the website expands
+        1. Web Development
+        2. UI UX
+        3. Photography -> could be its own website
+        4.
 
         // TESTS
 
