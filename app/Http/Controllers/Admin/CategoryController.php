@@ -39,7 +39,7 @@ class CategoryController extends Controller
         toastr()->success('Updated Successfully!', 'Congrats!');
 
         // RETURN
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.blog-category.index');
     }
 
     // DESTROYS DATA IN THE DB

@@ -23,20 +23,11 @@ class BlogCategoryDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-        ->addColumn("image", function ($query) {
-            return '<img style="width: 70px;" src="'.asset($query->image).'"></img>';
-        })
-            ->addColumn('created_at', function($query){
-                return date('d-m-Y', strtotime($query->created_at));
+            ->addColumn('action', function($query){ // THE 'ACTION' COLUMN WILL HAVE BUTTONS IN IT
+                return
+                '<a href="'.route('admin.blog-category.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="'.route('admin.blog-category.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>'; // WE PASS THE ID OF THE CATEGORY TO THE ROUTE
             })
-            ->addColumn('category', function($query){
-                return $query->category->name;
-            })
-            ->addColumn('action', function($query){
-                return '<a href="'.route('admin.blog-category.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                <a href="'.route('admin.blog-category.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>';
-            })
-            ->rawColumns(['image', 'action']) // THIS TELLS LARAVEL DATA TABLES THAT THE COLUMN HAS HTML AND EXCLUDES IT // THERE CAN ONLY BE 1 'RAWCOLUMN'
             ->setRowId('id');
     }
 

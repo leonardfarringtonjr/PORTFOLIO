@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\BlogCategoryDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
 class BlogCategoryController extends Controller
@@ -17,7 +18,31 @@ class BlogCategoryController extends Controller
     }
 
     public function store(Request $request){
-        return dd($request->all());
+
+        // TEST
+        // return dd($request->all());
+
+        // VALIDATE
+        $request->validate([
+            'name' => ['required', 'max:100'],
+        ]);
+
+        // STORE
+        $category = new BlogCategory() ;
+        $category->name = $request->name;
+        $category->slug = \Str::slug($request->name);
+        $category->save();
+
+        // NOTIFY
+        toastr()->success('Created Successfully!', 'Congrats!');
+
+        // RETURN
+        return redirect()->route('admin.category.index');
+
+    }
+
+    public function edit(){
+        //
     }
 
     public function update(){
