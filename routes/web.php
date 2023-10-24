@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
@@ -82,7 +83,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /* PORTFOLIO ROUTES */
 
-    // PORTFOLIO / CATEGORY PAGE
+    // PORTFOLIO CATEGORIES
     Route::resource('category', CategoryController::class);
 
     // PORTFOLIO / PORTFOLIO ITEM
@@ -90,5 +91,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // PORTFOLIO / SECTION SETTINGS
     Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
+
+    /* BLOG ROUTES */
+
+    // BLOG CATEGORIES
+    Route::resource('blog-category', BlogCategoryController::class);
 
 });

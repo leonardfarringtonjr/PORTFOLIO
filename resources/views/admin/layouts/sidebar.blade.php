@@ -34,7 +34,7 @@
 
             {{-- SERVICES --}}
             <li class="nav-item">
-                <a href="{{route('admin.service-item.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Services</span></a>
+                <a href="{{route('admin.service-item.index')}}" class="nav-link"><i class="fas fa-columns"></i><span>Services</span></a>
             </li>
 
             {{-- ABOUT --}}
@@ -56,6 +56,38 @@
             {{-- EXPERIENCE --}}
             <li class="nav-item">
                 <a href="{{route('admin.experience.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Experience</span></a>
+            </li>
+
+            {{-- FEEDBACK --}}
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Feedback</span></a>
+                <ul class="dropdown-menu" style="display: none;">
+                    <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Portfolio Item</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Section Setting</a></li>
+                </ul>
+            </li>
+
+            {{-- BLOG --}}
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Blog</span></a>
+                <ul class="dropdown-menu" style="display: none;">
+                    <li><a class="nav-link" href="{{ route('admin.blog-category.index') }}">Blog Categories</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Blog Items</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Blog Settings</a></li>
+                </ul>
+            </li>
+
+            {{-- CONTACT --}}
+            <li class="nav-item">
+                <a href="{{route('admin.experience.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Contact</span></a>
+            </li>
+
+            {{-- FOOTER --}}
+            <li class="nav-item">
+                <a href="{{route('admin.experience.index')}}" class="nav-link"><i class="fas fa-fire"></i><span>Footer</span></a>
             </li>
 
             {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
