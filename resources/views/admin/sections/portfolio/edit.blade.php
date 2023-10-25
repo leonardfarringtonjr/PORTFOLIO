@@ -13,7 +13,7 @@
                 <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Portfolio</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Category</a></div>
-                <div class="breadcrumb-item"><a href="#">Edit</a></div>
+                <div class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></div>
             </div>
         </div>
 

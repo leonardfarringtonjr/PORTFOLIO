@@ -10,7 +10,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{route('admin.blog-category.index')}}">Blog</a></div>
-                <div class="breadcrumb-item"><a href="{{route('admin.blog-category.create')}}">Blog Categories</a></div>
+                <div class="breadcrumb-item"><a href="{{route('admin.blog-category.index')}}">Blog Categories</a></div>
             </div>
         </div>
 
