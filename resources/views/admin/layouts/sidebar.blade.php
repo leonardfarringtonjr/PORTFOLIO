@@ -75,7 +75,7 @@
                     <span>Blog</span></a>
                 <ul class="dropdown-menu" style="display: none;">
                     <li><a class="nav-link" href="{{ route('admin.blog-category.index') }}">Blog Categories</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Blog Items</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.blog-list.index') }}">Blog List</a></li>
                     <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Blog Settings</a></li>
                 </ul>
             </li>

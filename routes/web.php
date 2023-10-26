@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
@@ -96,5 +97,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // BLOG CATEGORIES
     Route::resource('blog-category', BlogCategoryController::class);
+
+    // BLOG
+    Route::resource('blog-list', BlogController::class);
 
 });
