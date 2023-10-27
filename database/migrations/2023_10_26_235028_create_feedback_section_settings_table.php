@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('feedback_section_settings', function (Blueprint $table) {
             $table->id();
-            $table->text('image')->nullable();
-            $table->string('title')->nullable();
-            $table->integer('category')->nullable();
-            $table->text('description')->nullable();
+            $table->string('title')->nullable;
+            $table->string('sub_title')->nullable;
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('feedback_section_settings');
     }
 };

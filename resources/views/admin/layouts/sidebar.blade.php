@@ -47,9 +47,9 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Portfolio</span></a>
                 <ul class="dropdown-menu" style="display: none;">
+                    <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Portfolio Section Setting</a></li>
                     <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
                     <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Portfolio Item</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
 
@@ -63,9 +63,8 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Feedback</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Portfolio Item</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">Section Setting</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.feedback-section-setting.index') }}">Feedback Settings</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.feedback.index') }}">All Feedback</a></li>
                 </ul>
             </li>
 

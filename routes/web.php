@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItem;
 use App\Http\Controllers\Admin\PortfolioItemController;
@@ -12,7 +15,6 @@ use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceItemController;
 use App\Http\Controllers\Admin\TyperTitleController;
-use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -81,6 +83,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // EXPERIENCE SECTION
     Route::resource('experience', ExperienceController::class);
+
+    /* FEEDBACK ROUTES */
+
+    // FEEDBACK SECTION
+    Route::resource('feedback', FeedbackController::class);
+
+    // FEEDBACK SETTING
+    Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
 
     /* PORTFOLIO ROUTES */
 
