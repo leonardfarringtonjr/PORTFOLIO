@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\BlogDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,34 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TEST
+        // return dd($request->all());
+
+        // VALIDATE
+        $request->validate([
+            'image' => ['required', 'image','max:5000'],
+            'title' => ['required','max:200'],
+            'category_id' => ['required','numeric'],
+            'description' => ['required'],
+        ]);
+
+        // ACCESS
+        $imagePath = handleUpload('image');
+
+        $blog = new Blog();
+
+        // CREATE
+        $blog->image = $imagePath;
+        $blog->title = $request->title;
+        $blog->category = $request->category_id;
+        $blog->description = $request->description;
+        $blog->save();
+
+        // NOTIFY
+        toastr()->success('Blog Created Successfully!', 'Congrats!');
+
+        // RETURN
+        return redirect()->route('admin.blog-list.index');
     }
 
     /**

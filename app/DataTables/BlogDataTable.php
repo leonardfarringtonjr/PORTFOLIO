@@ -22,13 +22,33 @@ class BlogDataTable extends DataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
+
         return (new EloquentDataTable($query))
-            ->addColumn('action', function($query){ // THE 'ACTION' COLUMN WILL HAVE BUTTONS IN IT
-                return
-                '<a href="'.route('admin.blog-list.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                <a href="'.route('admin.blog-list.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>'; // WE PASS THE ID OF THE CATEGORY TO THE ROUTE
+            ->addColumn("image", function ($query) {
+                return '<img style="width: 70px;" src="' . asset($query->image) . '"></img>';
             })
+            ->addColumn('created_at', function ($query) {
+                return date('m/d/Y', strtotime($query->created_at));
+            })
+
+            // TO SHOW THE NAMES OF THE BLOG'S CATEGORIES, YOU HAVE TO CREATE A RELATIONSHIP BETWEEN BLOGS AND BLOG CATEGORIES
+            ->addColumn('category', function ($query) {
+                return $query->category;
+            })
+            ->addColumn('action', function ($query) {
+                return '<a href="' . route('admin.blog-list.edit', $query->id) . '" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="' . route('admin.blog-list.destroy', $query->id) . '" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>';
+            })
+            ->rawColumns(['image', 'action']) // THIS TELLS LARAVEL DATA TABLES THAT THE COLUMN HAS HTML AND EXCLUDES IT // THERE CAN ONLY BE 1 'RAWCOLUMN'
             ->setRowId('id');
+
+        // return (new EloquentDataTable($query))
+        //     ->addColumn('action', function($query){ // THE 'ACTION' COLUMN WILL HAVE BUTTONS IN IT
+        //         return
+        //         '<a href="'.route('admin.blog-list.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+        //         <a href="'.route('admin.blog-list.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>'; // WE PASS THE ID OF THE CATEGORY TO THE ROUTE
+        //     })
+        //     ->setRowId('id');
     }
 
     /**
@@ -50,12 +70,12 @@ class BlogDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('blog-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    ->orderBy(0)
-                    ->selectStyleSingle()
-                    ->buttons([]);
+            ->setTableId('blog-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            ->orderBy(0)
+            ->selectStyleSingle()
+            ->buttons([]);
     }
 
     /**
@@ -67,13 +87,16 @@ class BlogDataTable extends DataTable
     {
         return [
             Column::make('id')->width(100),
-            Column::make('name'),
-            Column::make('slug'),
+            Column::make('image'),
+            Column::make('title'),
+            Column::make('category'),
+            Column::make('description'),
+            Column::make('created_at'),
             Column::computed('action')
-            ->exportable(false)
-            ->printable(false)
-            ->width(200)
-            ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(200)
+                ->addClass('text-center'),
         ];
     }
 

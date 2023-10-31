@@ -27,7 +27,7 @@
 
                         <div class="card-body">
 
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('admin.blog-list.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
 
@@ -68,22 +68,6 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                     <div class="col-sm-12 col-md-7">
                                         <textarea class="summernote" style="height: 100px;" name="description"></textarea>
-                                    </div>
-                                </div>
-
-                                {{-- CLIENT --}}
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Client</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="client" value="">
-                                    </div>
-                                </div>
-
-                                {{-- WEBSITE --}}
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Website</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="website" value="">
                                     </div>
                                 </div>
 
