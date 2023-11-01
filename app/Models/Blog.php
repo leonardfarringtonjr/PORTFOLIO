@@ -15,4 +15,9 @@ class Blog extends Model
         'category',
         'description',
     ];
+
+    public function getCategory()
+    {
+        return $this->belongsTo(BlogCategory::class, 'category', 'id'); // NOW WE CAN ACCESS THE RELATIONSHIP FROM THE DATATABLE
+    }
 }

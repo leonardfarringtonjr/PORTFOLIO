@@ -33,7 +33,7 @@ class BlogDataTable extends DataTable
 
             // TO SHOW THE NAMES OF THE BLOG'S CATEGORIES, YOU HAVE TO CREATE A RELATIONSHIP BETWEEN BLOGS AND BLOG CATEGORIES
             ->addColumn('category', function ($query) {
-                return $query->category;
+                return $query->getCategory->name; // FROM THE QUERY, WE ACCESS THE RELATIONSHIP 'getCategory' // FROM THE RELATIONSHIP, WE GET THE CATEGORY NAME
             })
             ->addColumn('action', function ($query) {
                 return '<a href="' . route('admin.blog-list.edit', $query->id) . '" class="btn btn-primary"><i class="fas fa-edit"></i></a>
