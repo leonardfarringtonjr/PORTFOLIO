@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Experience;
 use App\Models\Feedback;
@@ -23,6 +24,7 @@ class HomeController extends Controller
         $hero = Hero::first(); // TAKES THE FIRST ROW FROM THE 'HERO' MODEL OF THE DB // STORES ITS DATA INTO A VAR
         $serviceItems = ServiceItem::all();
         $about = About::first();
+        $blogs = Blog::all();
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategories = Category::all();
         $portfolioItems = PortfolioItem::all();
@@ -41,6 +43,7 @@ class HomeController extends Controller
                 'experience',
                 'feedbackItems',
                 'feedbackSettings',
+                'blogs',
             )
         ); // creates an array containing vars and their values // creates an array where the key is 'hero' // the data is then passed as data to the view
 
