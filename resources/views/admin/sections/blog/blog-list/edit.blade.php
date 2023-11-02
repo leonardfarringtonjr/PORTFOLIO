@@ -13,7 +13,7 @@
                 <div class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="javascript:void(0)">Blog</a></div>
                 <div class="breadcrumb-item"><a href="{{route('admin.blog-list.index')}}">Blog List</a></div>
-                <div class="breadcrumb-item"><a href="{{route('admin.blog-list.edit')}}">Edit</a></div>
+                <div class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></div>
             </div>
         </div>
 
@@ -27,7 +27,7 @@
 
                         <div class="card-body">
 
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('admin.blog-list.update', $blogItem->id)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -46,7 +46,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="title" value="">
+                                        <input type="text" class="form-control" name="title" value="{{$blogItem->title ? e($blogItem->title) : ''}}">
                                     </div>
                                 </div>
 
@@ -56,9 +56,9 @@
                                     <div class="col-sm-12 col-md-7">
                                         <select name="category_id" id="form-control selectric">
                                             <option>Select</option>
-                                            {{-- @foreach ($categories as $category)
-                                                <option {{$category->id == $portfolioItem->category_id ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach --}}
+                                            @foreach ($categories as $category)
+                                                <option {{$category->id == $blogItem->category_id ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -67,23 +67,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote" style="height: 100px;" name="description"></textarea>
-                                    </div>
-                                </div>
-
-                                {{-- CLIENT --}}
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Client</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="client" value="">
-                                    </div>
-                                </div>
-
-                                {{-- WEBSITE --}}
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Website</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="website" value="">
+                                        <textarea class="summernote" style="height: 100px;" name="description">{{$blogItem->description ? e($blogItem->description) : ""}}</textarea>
                                     </div>
                                 </div>
 
@@ -104,16 +88,16 @@
     </section>
 @endsection
 
-{{-- @push('scripts')
+@push('scripts')
 <script>
     $(document).ready(function(){
-        @if (isset($portfolioItem) && isset($portfolioItem->image)) // YOU SHOULD ALWAYS CHECK IF A VAR EXISTS AND HAS THE EXPECTED PROPERTIES BEFORE USING IT
+        @if (isset($blogItem) && isset($blogItem->image)) // YOU SHOULD ALWAYS CHECK IF A VAR EXISTS AND HAS THE EXPECTED PROPERTIES BEFORE USING IT
             $('#image-preview').css({ // TARGETS THE HTML ELEMENT WITH THE ID "image-preview"
-                'background-image': 'url("{{asset($portfolioItem->image)}}")', // WHEN ECHOING VARS IN BLADE TEMPLATES, YOU USE CURLY BRACES TO AUTOMATICALLY ESCAPE OUTPUT // THIS PROTECTS YOU FROM XSS ATTACKS
+                'background-image': 'url("{{asset($blogItem->image)}}")', // WHEN ECHOING VARS IN BLADE TEMPLATES, YOU USE CURLY BRACES TO AUTOMATICALLY ESCAPE OUTPUT // THIS PROTECTS YOU FROM XSS ATTACKS
                 'background-size': 'cover',
                 'background-position': 'center center'
             })
         @endif
     });
 </script>
-@endpush --}}
+@endpush

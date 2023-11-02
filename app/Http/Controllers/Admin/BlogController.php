@@ -75,7 +75,9 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $blogItem = Blog::findOrFail($id);
+        $categories = BlogCategory::all();
+        return view('admin.sections.blog.blog-list.edit',compact('blogItem','categories'));
     }
 
     /**
@@ -83,7 +85,35 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // TEST
+        // dd($request->all());
+
+        // VALIDATE
+        $request->validate([
+            'image' => ['image','max:5000'],
+            'title' => ['required','max:200'],
+            'category_id' => ['required','numeric'],
+            'description' => ['required'],
+        ]);
+
+        // ACCESS
+        $blogItem = Blog::findOrFail($id); // WE ACCESS THE 'PORTFOLIOITEMS' MODEL // WE USE FINDORFAIL BECAUSE WE'RE UPDATING THE TABLE, NOT CREATING DATA
+        $imagePath = handleUpload('image', $blogItem);
+
+        // STORE
+        $blogItem->image = (!empty($imagePath) ? $imagePath : $blogItem->image);
+        $blogItem->title = $request->title;
+        $blogItem->category = $request->category_id;
+        $blogItem->description = $request->description;
+
+        // SAVE
+        $blogItem->save();
+
+        // NOTIFICATION
+        toastr()->success('Updated Blog Successfully!', 'Congrats!');
+
+        // RETURN
+        return redirect()->route('admin.blog-list.index');
     }
 
     /**
@@ -91,6 +121,8 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $blogItem = Blog::findOrFail($id);
+        deleteFileIfExists($blogItem->image);
+        $blogItem->delete();
     }
 }

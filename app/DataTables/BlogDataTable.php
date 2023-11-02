@@ -42,13 +42,6 @@ class BlogDataTable extends DataTable
             ->rawColumns(['image', 'action']) // THIS TELLS LARAVEL DATA TABLES THAT THE COLUMN HAS HTML AND EXCLUDES IT // THERE CAN ONLY BE 1 'RAWCOLUMN'
             ->setRowId('id');
 
-        // return (new EloquentDataTable($query))
-        //     ->addColumn('action', function($query){ // THE 'ACTION' COLUMN WILL HAVE BUTTONS IN IT
-        //         return
-        //         '<a href="'.route('admin.blog-list.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-        //         <a href="'.route('admin.blog-list.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>'; // WE PASS THE ID OF THE CATEGORY TO THE ROUTE
-        //     })
-        //     ->setRowId('id');
     }
 
     /**
