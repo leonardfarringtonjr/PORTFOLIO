@@ -45,11 +45,14 @@ Route::get('/blog-details', function () {
     return view('frontend.pages.blog-pages.blog-details');
 });
 
-// PORTFOLIO ROUTES
+// PORTFOLIO FRONTEND ROUTES
 // Route::get('/portfolio-details', function () {
 //     return view('frontend.pages.portfolio-pages.portfolio-details');
 // });
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
+
+// BLOG FRONTEND ROUTES
+Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

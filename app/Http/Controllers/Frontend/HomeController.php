@@ -49,14 +49,23 @@ class HomeController extends Controller
 
     }
 
-    public function showPortfolio($id){
+    // SHOW DYNAMIC PORTFOLIO PAGES
+    public function showPortfolio($id)
+    {
         $portfolioItem = PortfolioItem::findOrFail($id); // WE USE FINDORFAIL BECAUSE WE ARE GRABBING A SPECIFIC ROW WITH THE SPECIFIC ID
         return view(
             'frontend.pages.portfolio-pages.portfolio-details',
             compact(
                 'id',
                 'portfolioItem'
-        )
-    );
+            )
+        );
+    }
+
+    // SHOW DYNAMIC BLOG PAGES
+    // THE ID IS PASSED TO THE METHOD FROM THE ROUTE
+    public function showBlog($id){
+        $blogItem = Blog::findOrFail($id);
+        return view('frontend.pages.blog-pages.blog-details',compact('id','blogItem'));
     }
 }
