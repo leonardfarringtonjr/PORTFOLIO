@@ -24,32 +24,24 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="head-title">What People Says About Real Estate Properties.</h2>
+                <h2 class="head-title">{{$blogItem->title}}</h2>
                 <div class="blog-meta">
                     <div class="single-meta">
                         <div class="meta-title">Published</div>
-                        <h4 class="meta-value"><a href="#">13 November, 2019</a></h4>
+                        <h4 class="meta-value"><a href="javascript:void(0)">{{date('M-d-Y',strtotime($blogItem->created_at))}}</a></h4>
                     </div>
                     <div class="single-meta">
                         <div class="meta-title">Tag</div>
-                        <h4 class="meta-value"><a href="#">Web Development</a></h4>
-                    </div>
-                    <div class="single-meta">
-                        <div class="meta-title">Comments</div>
-                        <h4 class="meta-value">258 Comments</h4>
+                        <h4 class="meta-value"><a href="#">{{$blogItem->getCategory->name}}</a></h4>
                     </div>
                 </div>
                 <figure class="image-block">
-                    <img src="images/blog-block-image.jpg" alt="">
+                    {{-- <img class="img-fix" src="{{asset($blogItem->image)}}" alt=""> --}}
+                    <img src="{{asset($blogItem->image)}}" alt="">
                 </figure>
                 <div class="description">
                     <h2>That and normal and we've class. Explain attained.</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum
-                        is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley.</p>
+                    <p>{{$blogItem->description}}</p>
                     <blockquote>Standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen
                         book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
