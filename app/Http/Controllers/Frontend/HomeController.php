@@ -66,6 +66,8 @@ class HomeController extends Controller
     // THE ID IS PASSED TO THE METHOD FROM THE ROUTE
     public function showBlog($id){
         $blogItem = Blog::findOrFail($id);
-        return view('frontend.pages.blog-pages.blog-details',compact('id','blogItem'));
+        $previousPost = Blog::where('id','<', $blogItem->id)->orderBy('id','desc')->first();// SHOWS THE PREVIOUS PERK
+        $nextPost = Blog::where('id','>', $blogItem->id)->orderBy('id','asc')->first();// SHOWS THE PREVIOUS PERK
+        return view('frontend.pages.blog-pages.blog-details',compact('id','blogItem','previousPost','nextPost'));
     }
 }
