@@ -1,4 +1,6 @@
 <!-- Experience-Area-Start -->
+
+<!--
 <section class="experience-area section-padding">
     <div class="container">
         <div class="row d-flex align-items-center">
@@ -16,4 +18,6 @@
         </div>
     </div>
 </section>
+-->
+
 <!-- Experience-Area-End -->
