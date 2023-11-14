@@ -52,6 +52,7 @@ Route::get('/blog-details', function () {
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 
 // BLOG FRONTEND ROUTES
+Route::get('blogs', [HomeController::class, 'blog'])->name('blog'); // show all blogs
 Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
 
 // WHEN YOU LOG IN YOU ARE REDIRECTED TO THE DASHBOARD

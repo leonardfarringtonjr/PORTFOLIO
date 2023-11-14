@@ -70,4 +70,10 @@ class HomeController extends Controller
         $nextPost = Blog::where('id','>', $blogItem->id)->orderBy('id','asc')->first();// SHOWS THE PREVIOUS PERK
         return view('frontend.pages.blog-pages.blog-details',compact('id','blogItem','previousPost','nextPost'));
     }
+
+    // SHOW ALL BLOGS
+    public function blog()
+    {
+        return view('frontend.pages.blog-pages.blog');
+    }
 }
