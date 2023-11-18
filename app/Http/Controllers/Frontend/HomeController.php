@@ -74,6 +74,7 @@ class HomeController extends Controller
     // SHOW ALL BLOGS
     public function blog()
     {
-        return view('frontend.pages.blog-pages.blog');
+        $blogs = Blog::latest()->paginate(9);
+        return view('frontend.pages.blog-pages.blog', compact('blogs'));
     }
 }
