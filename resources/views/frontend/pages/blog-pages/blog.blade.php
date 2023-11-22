@@ -128,8 +128,12 @@
                 </div>
             </div>
         </div>
+
+        {{-- PAGINATION --}}
         <div class="row">
             <div class="col-sm-12 text-center">
+
+                {{$blogs->links()}}
                 <nav class="navigation pagination">
                     <div class="nav-links">
                         <a class="previus page-numbers" href="#">
