@@ -75,7 +75,7 @@ class HomeController extends Controller
     public function blog()
     {
         // $blogs = Blog::latest()->paginate(1);
-        $blogs = Blog::latest()->paginate(9); // THE PAGINATION WILL ONLY SHOW WHEN THE BLOG COUNT IS OVER A CERTAIN NUMBER
+        $blogs = Blog::latest()->paginate(1); // THE PAGINATION WILL ONLY SHOW WHEN THE BLOG COUNT IS OVER A CERTAIN NUMBER
         return view('frontend.pages.blog-pages.blog', compact('blogs'));
     }
 }
